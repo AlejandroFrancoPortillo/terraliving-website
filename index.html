@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terraliving — Ice Baths & Cold Plunge Systems | Australia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@600;700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Variables ──────────────────────────────────────────────────── */
+    :root {
+      --black:        #0A0A0A;
+      --surface:      #111111;
+      --card:         #1A1A1A;
+      --card-hi:      #222232;
+      --white:        #F0F4F8;
+      --muted:        #6B8099;
+      --secondary:    #A0BAD0;
+      --blue:         #00C2FF;
+      --blue-bright:  #1ECFFF;
+      --blue-dim:     rgba(0,194,255,.07);
+      --blue-glow:    rgba(0,194,255,.28);
+      --blue-stroke:  rgba(0,194,255,.18);
+      --hot:          #FF5020;
+
+      --ff-display: 'Bebas Neue', sans-serif;
+      --ff-head:    'Barlow', sans-serif;
+      --ff-body:    'DM Sans', sans-serif;
+      --ff-mono:    'Space Mono', monospace;
+
+      --sp: 104px;
+      --w:  1200px;
+    }
+
+    /* ─── Reset ──────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9000;
+      mix-blend-mode: overlay;
+    }
+
+    /* ─── Layout helpers ─────────────────────────────────────────────── */
+    .wrap { max-width: var(--w); margin: 0 auto; padding: 0 28px; }
+    section { padding: var(--sp) 28px; }
+
+    /* ─── Typography helpers ─────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+    .display {
+      font-family: var(--ff-display);
+      font-size: clamp(52px, 6.5vw, 80px);
+      line-height: .93;
+      letter-spacing: .03em;
+      color: var(--white);
+      margin-bottom: 22px;
+    }
+    .body-lg {
+      font-size: 17px;
+      color: var(--secondary);
+      line-height: 1.65;
+      max-width: 540px;
+      margin-bottom: 48px;
+    }
+
+    /* ─── Buttons ────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 32px;
+      border: none;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .btn-ice {
+      background: var(--blue);
+      color: var(--black);
+    }
+    .btn-ice:hover {
+      background: var(--blue-bright);
+      box-shadow: 0 0 32px var(--blue-glow), 0 0 60px rgba(0,194,255,.08);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(240,244,248,.25);
+    }
+    .btn-ghost:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    /* ─── Reveal ─────────────────────────────────────────────────────── */
+    /* Hidden only when JS has confirmed it can run the observer */
+    .js-reveal .r {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .js-reveal .r.on { opacity: 1; transform: none; }
+
+    /* ─── Navigation ─────────────────────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 8000;
+      padding: 0 28px;
+      transition: background .3s, border-color .3s;
+    }
+    #nav.scrolled {
+      background: rgba(10,10,10,.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--blue-stroke);
+    }
+    .nav-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      font-family: var(--ff-display);
+      font-size: 24px;
+      letter-spacing: .12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .logo em { color: var(--blue); font-style: normal; }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* ─── Hero ───────────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 28px 80px;
+      background-image:
+        linear-gradient(to bottom, rgba(10,10,10,.65) 0%, rgba(10,10,10,.40) 55%, rgba(10,10,10,.72) 100%),
+        url('brand_assets/images/hero-bg-final.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+    }
+
+    /* Dot-grid background */
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(0,194,255,.12) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    }
+
+    /* Atmospheric glow */
+    .hero-glow {
+      position: absolute;
+      top: 10%; left: -5%;
+      width: 55%; height: 70%;
+      background: radial-gradient(ellipse, rgba(0,194,255,.055) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-glow-r {
+      position: absolute;
+      bottom: -10%; right: -5%;
+      width: 45%; height: 60%;
+      background: radial-gradient(ellipse, rgba(0,194,255,.035) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: var(--w);
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards .2s;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(80px, 13vw, 168px);
+      line-height: .88;
+      letter-spacing: .02em;
+      color: var(--white);
+      margin-bottom: 6px;
+      opacity: 0;
+      animation: fadeUp .85s ease forwards .38s;
+    }
+    .hero-h1 .blue { color: var(--blue); }
+
+    .hero-h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(48px, 7.5vw, 96px);
+      line-height: .92;
+      letter-spacing: .025em;
+      color: var(--white);
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: fadeUp .85s ease forwards .52s;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--secondary);
+      max-width: 440px;
+      line-height: 1.62;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards .66s;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards .8s;
+    }
+
+    /* Ghost temp number */
+    .hero-bg-temp {
+      position: absolute;
+      right: -2%; top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--ff-display);
+      font-size: clamp(180px, 24vw, 320px);
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(0,194,255,.1);
+      letter-spacing: -.02em;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards 1s;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.2s;
+    }
+    .hero-scroll-line {
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, var(--blue), transparent);
+      animation: pulse 2s ease infinite;
+    }
+    .hero-scroll span {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── Cert Bar ───────────────────────────────────────────────────── */
+    #cert-bar {
+      background: var(--surface);
+      border-top: 1px solid rgba(0,194,255,.1);
+      border-bottom: 1px solid rgba(0,194,255,.1);
+      padding: 22px 28px;
+    }
+    .cert-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .cert-badges { display: flex; gap: 10px; align-items: center; }
+    .badge {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--blue);
+      border: 1px solid var(--blue-stroke);
+      background: var(--blue-dim);
+      padding: 5px 14px;
+    }
+    .trust-items { display: flex; gap: 28px; flex-wrap: wrap; }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--secondary);
+    }
+    .trust-item::before { content: '✓'; color: var(--blue); font-size: 13px; }
+
+    /* ─── Benefits ───────────────────────────────────────────────────── */
+    #benefits { background: var(--surface); }
+
+    .benefits-header { margin-bottom: 56px; }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .b-card {
+      background: var(--card);
+      padding: 32px 26px;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+      transition: background .28s, border-color .28s, box-shadow .28s;
+    }
+    .b-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .28s;
+    }
+    .b-card:hover {
+      background: var(--card-hi);
+      border-color: var(--blue-stroke);
+      box-shadow: inset 0 0 40px var(--blue-dim);
+    }
+    .b-card:hover::before { transform: scaleX(1); }
+
+    .b-icon { font-size: 26px; display: block; margin-bottom: 14px; }
+    .b-title {
+      font-family: var(--ff-head);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+    .b-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ─── Products ───────────────────────────────────────────────────── */
+    #products { background: var(--black); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .p-card {
+      background: var(--card);
+      padding: 48px 40px;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+      transition: background .28s, border-color .28s;
+    }
+    .p-card:hover {
+      background: var(--card-hi);
+      border-color: var(--blue-stroke);
+    }
+    .p-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+      opacity: 0;
+      transition: opacity .28s;
+    }
+    .p-card:hover::after { opacity: 1; }
+
+    .p-tag {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      border: 1px solid var(--blue-stroke);
+      background: var(--blue-dim);
+      padding: 4px 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .p-name {
+      font-family: var(--ff-display);
+      font-size: 52px;
+      letter-spacing: .03em;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .p-desc {
+      font-size: 15px;
+      color: var(--secondary);
+      line-height: 1.62;
+      margin-bottom: 28px;
+      max-width: 360px;
+    }
+    .p-specs {
+      list-style: none;
+      margin-bottom: 34px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .p-specs li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--ff-mono);
+      font-size: 12px;
+      letter-spacing: .05em;
+      color: var(--secondary);
+    }
+    .p-specs li::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+    .p-actions { display: flex; gap: 12px; }
+
+    /* ─── Hot + Cold ─────────────────────────────────────────────────── */
+    #hotcold {
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(to right, rgba(10,10,10,.92) 0%, rgba(10,10,10,.78) 55%, rgba(10,10,10,.85) 100%),
+        url('brand_assets/images/lifestyle-indoor-final.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    #hotcold::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(130deg,
+        rgba(255,80,32,.04) 0%, transparent 46%,
+        rgba(0,194,255,.04) 54%, transparent 100%);
+      pointer-events: none;
+    }
+    .hc-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .hc-desc {
+      font-size: 16px;
+      color: var(--secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hc-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 12px;
+    }
+    .hc-panel { padding: 36px 28px; }
+    .hc-panel.hot {
+      background: rgba(255,80,32,.06);
+      border: 1px solid rgba(255,80,32,.2);
+    }
+    .hc-panel.cold {
+      background: rgba(0,194,255,.06);
+      border: 1px solid rgba(0,194,255,.2);
+    }
+    .hc-panel .p-icon { font-size: 36px; display: block; margin-bottom: 16px; }
+    .hc-panel .p-title {
+      font-family: var(--ff-display);
+      font-size: 34px;
+      letter-spacing: .04em;
+      margin-bottom: 12px;
+    }
+    .hc-panel.hot .p-title { color: var(--hot); }
+    .hc-panel.cold .p-title { color: var(--blue); }
+    .hc-panel .p-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .hc-contrast {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(240,244,248,.06);
+    }
+    .hc-fact strong {
+      display: block;
+      font-family: var(--ff-head);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .hc-fact span { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ─── Commercial ─────────────────────────────────────────────────── */
+    #commercial {
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    #commercial::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(0,194,255,.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .com-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .com-header-right { font-size: 16px; color: var(--secondary); line-height: 1.68; }
+    .com-header-right p { margin-bottom: 28px; }
+
+    .com-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+    .stat {
+      background: var(--card);
+      padding: 32px 26px;
+      border: 1px solid var(--blue-stroke);
+    }
+    .stat-n {
+      font-family: var(--ff-display);
+      font-size: 58px;
+      color: var(--blue);
+      letter-spacing: .02em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-l {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .com-product {
+      background: var(--card);
+      border: 1px solid var(--blue-stroke);
+      padding: 52px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 56px;
+      align-items: center;
+    }
+    .com-name {
+      font-family: var(--ff-display);
+      font-size: 66px;
+      letter-spacing: .03em;
+      line-height: .95;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+    .com-desc {
+      font-size: 16px;
+      color: var(--secondary);
+      line-height: 1.65;
+      max-width: 460px;
+      margin-bottom: 32px;
+    }
+    .com-features {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 28px;
+      margin-bottom: 36px;
+    }
+    .com-features li {
+      font-family: var(--ff-mono);
+      font-size: 12px;
+      letter-spacing: .05em;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .com-features li::before { content: '→'; color: var(--blue); }
+
+    .com-badge {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      border: 1px solid var(--blue-stroke);
+      background: radial-gradient(circle, rgba(0,194,255,.08) 0%, transparent 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 22px;
+      letter-spacing: .06em;
+      color: var(--blue);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .com-badge::before {
+      content: '';
+      position: absolute; inset: -10px;
+      border-radius: 50%;
+      border: 1px dashed rgba(0,194,255,.15);
+      animation: spin 22s linear infinite;
+    }
+
+    /* ─── Quote Form ─────────────────────────────────────────────────── */
+    #quote {
+      background: var(--surface);
+      position: relative;
+    }
+    #quote::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    }
+    .q-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .q-info { padding-top: 16px; }
+    .q-promises {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .q-promise { display: flex; gap: 14px; align-items: flex-start; }
+    .q-icon {
+      width: 40px; height: 40px;
+      flex-shrink: 0;
+      background: var(--blue-dim);
+      border: 1px solid var(--blue-stroke);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .q-promise strong {
+      display: block;
+      font-family: var(--ff-head);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .q-promise span { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    .q-form {
+      background: var(--card);
+      border: 1px solid var(--blue-stroke);
+      padding: 44px 38px;
+    }
+    .q-form-title {
+      font-family: var(--ff-display);
+      font-size: 38px;
+      letter-spacing: .03em;
+      color: var(--white);
+      margin-bottom: 30px;
+    }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .f-group { margin-bottom: 18px; }
+    .f-group label {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .f-group input,
+    .f-group select,
+    .f-group textarea {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid rgba(240,244,248,.1);
+      color: var(--white);
+      padding: 13px 15px;
+      font-family: var(--ff-body);
+      font-size: 15px;
+      outline: none;
+      appearance: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .f-group input:focus,
+    .f-group select:focus,
+    .f-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 2px rgba(0,194,255,.1);
+    }
+    .f-group textarea { height: 110px; resize: vertical; }
+    .f-group select option { background: var(--card); }
+    .f-submit {
+      width: 100%;
+      margin-top: 6px;
+      padding: 17px;
+      font-family: var(--ff-mono);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--blue);
+      border: none;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .f-submit:hover {
+      background: var(--blue-bright);
+      box-shadow: 0 0 28px var(--blue-glow);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(240,244,248,.05);
+      padding: 44px 28px;
+    }
+    .foot-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .foot-logo { font-family: var(--ff-display); font-size: 22px; letter-spacing: .12em; color: var(--white); }
+    .foot-logo em { color: var(--blue); font-style: normal; }
+    .foot-copy { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .07em; color: var(--muted); text-align: center; }
+    .foot-links { display: flex; gap: 22px; }
+    .foot-links a {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .foot-links a:hover { color: var(--blue); }
+
+    /* ─── Product Price ─────────────────────────────────────────────── */
+    .p-price {
+      font-family: var(--ff-display);
+      font-size: 30px;
+      letter-spacing: .03em;
+      color: var(--blue);
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    .p-price-gst {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .p-price-poa {
+      font-family: var(--ff-mono);
+      font-size: 13px;
+      letter-spacing: .12em;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    /* 6-card grid: last card spans full width */
+    .products-grid .p-card:nth-child(6) { grid-column: span 2; }
+
+    /* Product card image */
+    .p-img-wrap {
+      margin: -48px -40px 32px;
+      overflow: hidden;
+      height: 220px;
+    }
+    .p-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .p-card:hover .p-img-wrap img { transform: scale(1.04); }
+
+    /* Commercial image */
+    .com-img-wrap {
+      margin-top: 2px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .com-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+
+    /* Footer disclaimer */
+    .foot-disclaimer {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-align: center;
+      padding: 14px 28px;
+      border-top: 1px solid rgba(240,244,248,.06);
+      background: var(--surface);
+    }
+
+    /* ─── About ──────────────────────────────────────────────────────── */
+    #about { background: var(--surface); }
+    .about-inner { max-width: var(--w); margin: 0 auto; }
+    .about-body {
+      font-size: 18px;
+      color: var(--secondary);
+      line-height: 1.72;
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+    .about-location {
+      font-family: var(--ff-mono);
+      font-size: 13px;
+      letter-spacing: .1em;
+      color: var(--blue);
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .about-trust { display: flex; gap: 12px; flex-wrap: wrap; }
+    .about-trust-badge {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid var(--blue-stroke);
+      background: var(--blue-dim);
+      padding: 10px 22px;
+    }
+
+    /* ─── Contact / General Enquiry ──────────────────────────────────── */
+    #contact { background: var(--black); }
+    .contact-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info { padding-top: 16px; }
+    .form-note {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-top: 14px;
+      text-align: center;
+    }
+    .form-success {
+      display: none;
+      padding: 20px;
+      background: rgba(0,194,255,.06);
+      border: 1px solid var(--blue-stroke);
+      font-family: var(--ff-mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      color: var(--blue);
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    /* ─── Animations ─────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .3; }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── Mobile Navigation ─────────────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: 1px solid rgba(240,244,248,.15);
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      transition: transform .3s, opacity .3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 8500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .nav-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .nav-drawer {
+      position: fixed;
+      top: 0; right: 0;
+      width: min(320px, 88vw);
+      height: 100%;
+      background: var(--surface);
+      border-left: 1px solid var(--blue-stroke);
+      z-index: 8600;
+      display: flex;
+      flex-direction: column;
+      padding: 84px 28px 40px;
+      gap: 2px;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 26px;
+      letter-spacing: .06em;
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(240,244,248,.06);
+      transition: color .2s;
+    }
+    .nav-drawer a:hover { color: var(--blue); }
+    .nav-drawer .drawer-cta {
+      margin-top: 20px;
+      background: var(--blue);
+      color: var(--black) !important;
+      font-family: var(--ff-mono) !important;
+      font-size: 12px !important;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 16px !important;
+      text-align: center;
+      border-bottom: none !important;
+      min-height: 48px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .products-grid .p-card:nth-child(6) { grid-column: span 2; }
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media (max-width: 768px) {
+      :root { --sp: 64px; }
+
+      /* Nav */
+      .nav-links { display: none; }
+      #nav > .nav-inner > .btn { display: none; }
+      .nav-hamburger { display: flex; }
+
+      /* Hero typography — prevent overflow on small screens */
+      .hero-h1 { font-size: clamp(42px, 14vw, 90px); }
+      .hero-h2 { font-size: clamp(28px, 8vw, 56px); }
+      .hero-bg-temp { display: none; }
+      .hero-desc { max-width: 100%; }
+
+      /* Section display headings */
+      .display { font-size: clamp(34px, 8vw, 52px); }
+      .body-lg { max-width: 100%; }
+
+      /* Product cards */
+      .products-grid { grid-template-columns: 1fr; }
+      .products-grid .p-card:nth-child(6) { grid-column: span 1; }
+      .p-name { font-size: 38px; }
+      .p-img-wrap { margin: -48px -40px 28px; height: 180px; }
+      .com-img-wrap { height: 260px; }
+      .p-desc { max-width: 100%; }
+      .p-actions { flex-direction: column; }
+
+      /* Buttons — full width, touch friendly */
+      .btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+      }
+      .hero-ctas { flex-direction: column; }
+
+      /* Forms — full width, touch friendly */
+      .f-group input,
+      .f-group select,
+      .f-group textarea {
+        min-height: 48px;
+        padding: 14px 15px;
+        font-size: 16px; /* prevents iOS auto-zoom */
+      }
+      .f-submit { min-height: 48px; }
+      .f-row { grid-template-columns: 1fr; }
+
+      /* Layout sections */
+      .hc-inner { grid-template-columns: 1fr; gap: 40px; }
+      .com-header { grid-template-columns: 1fr; gap: 32px; }
+      .com-stats { grid-template-columns: 1fr 1fr; }
+      .com-product { grid-template-columns: 1fr; gap: 36px; }
+      .com-badge { display: none; }
+      .com-name { font-size: 44px; }
+      .q-inner { grid-template-columns: 1fr; gap: 48px; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .hc-panels { grid-template-columns: 1fr; }
+      .com-features { grid-template-columns: 1fr; }
+      .hc-contrast { grid-template-columns: 1fr; }
+      .com-stats { grid-template-columns: 1fr; }
+      .trust-items { flex-direction: column; gap: 12px; }
+      .cert-badges { flex-wrap: wrap; }
+      .about-trust { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ────────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">TERRA<em>LIVING</em></a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#hotcold">Hot + Cold</a></li>
+      <li><a href="#commercial">Commercial</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#quote" class="btn btn-ice">Get a Quote</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<nav class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
+  <a href="#products">Products</a>
+  <a href="#benefits">Benefits</a>
+  <a href="#hotcold">Hot + Cold</a>
+  <a href="#commercial">Commercial</a>
+  <a href="#about">About</a>
+  <a href="#quote" class="drawer-cta">Get a Quote</a>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-r"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Australian Ice Bath &amp; Cold Plunge Systems</p>
+
+    <h1 class="hero-h1">
+      EMBRACE<br>
+      <span class="blue">THE COLD.</span>
+    </h1>
+    <p class="hero-h2">RECLAIM YOUR EDGE.</p>
+
+    <p class="hero-desc">
+      Premium cold plunge and ice bath systems engineered for serious athletes
+      and wellness professionals. Built to perform in the Australian climate.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#products" class="btn btn-ice">Shop Now</a>
+      <a href="#quote" class="btn btn-ghost">Get a Quote</a>
+    </div>
+  </div>
+
+  <div class="hero-bg-temp" aria-hidden="true">3°</div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ── Certifications Bar ─────────────────────────────────────────────── -->
+<div id="cert-bar">
+  <div class="cert-inner">
+    <div class="cert-badges">
+      <span class="badge">CE</span>
+      <span class="badge">SAA</span>
+      <span class="badge">IPX4</span>
+      <span class="badge">ETL</span>
+    </div>
+    <div class="trust-items">
+      <div class="trust-item">Sydney After-Sales Support</div>
+      <div class="trust-item">1-Year Warranty</div>
+      <div class="trust-item">2.5% Defect Rate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Benefits ───────────────────────────────────────────────────────── -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="benefits-header">
+      <p class="eyebrow r">Why cold therapy</p>
+      <h2 class="display r">8 reasons to<br>take the plunge.</h2>
+      <p class="body-lg r" style="margin-bottom:0;">The science is clear. Cold exposure delivers measurable, lasting results across every system in the body.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="benefits-grid">
+      <div class="b-card r">
+        <span class="b-icon">💪</span>
+        <h3 class="b-title">Muscle Recovery</h3>
+        <p class="b-text">Accelerate recovery by reducing inflammation and flushing metabolic waste — back training faster.</p>
+      </div>
+      <div class="b-card r">
+        <span class="b-icon">🔥</span>
+        <h3 class="b-title">Metabolism Boost</h3>
+        <p class="b-text">Activate brown adipose tissue and elevate metabolic rate for hours after each session.</p>
+      </div>
+      <div class="b-card r">
+        <span class="b-icon">🛡️</span>
+        <h3 class="b-title">Immune System</h3>
+        <p class="b-text">Regular cold exposure increases white blood cell count and strengthens your natural defences.</p>
+      </div>
+      <div class="b-card r">
+        <span class="b-icon">🧠</span>
+        <h3 class="b-title">Mental Strength</h3>
+        <p class="b-text">Build resilience and discipline — every plunge is a battle won against your own mind.</p>
+      </div>
+      <div class="b-card r">
+        <span class="b-icon">⚡</span>
+        <h3 class="b-title">Mood &amp; Focus</h3>
+        <p class="b-text">Trigger a surge of norepinephrine — the neurochemical behind drive, attention and elevated mood.</p>
+      </div>
+      <div class="b-card r">
+        <span class="b-icon">🚀</span>
+        <h3 class="b-title">Energy Levels</h3>
+        <p class="b-text">Start every day charged. Cold immersion activates your sympathetic nervous system for sustained energy.</p>
+      </div>
+      <div class="b-card r">
+        <span class="b-icon">⚖️</span>
+        <h3 class="b-title">Weight Management</h3>
+        <p class="b-text">Cold thermogenesis burns calories and supports healthy body composition alongside training.</p>
+      </div>
+      <div class="b-card r">
+        <span class="b-icon">✨</span>
+        <h3 class="b-title">Skin &amp; Longevity</h3>
+        <p class="b-text">Cold exposure tightens pores, boosts circulation and activates longevity pathways at the cellular level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Products ───────────────────────────────────────────────────────── -->
+<section id="products">
+  <div class="wrap">
+    <p class="eyebrow r">Our range</p>
+    <h2 class="display r">Cold plunge systems<br>built for performance.</h2>
+    <p class="body-lg r">From residential athletes to commercial wellness facilities — a system engineered for your requirements.</p>
+
+    <div class="products-grid">
+
+      <!-- G5 -->
+      <div class="p-card r">
+        <div class="p-img-wrap">
+          <img src="brand_assets/images/g5-product-final.jpg" alt="G5 All-in-One ice bath" loading="lazy">
+        </div>
+        <span class="p-tag">All-in-One</span>
+        <h3 class="p-name">G5 ALL-IN-ONE</h3>
+        <div class="p-price">From $13,990 AUD</div>
+        <div class="p-price-gst">Inc. GST. Final quote after enquiry.</div>
+        <ul class="p-specs">
+          <li>316 stainless steel interior</li>
+          <li>Canadian cedar wood exterior</li>
+          <li>Built-in chiller — 1HP or 2HP</li>
+          <li>Temperature range: 3–42°C</li>
+          <li>Chlorine resistant</li>
+          <li>Colours: Black, White, Natural Wood</li>
+          <li>CE, SAA, IPX4, ETL certified</li>
+          <li>1 year warranty + Australian support</li>
+          <li>Allow 6–10 weeks for delivery Australia-wide.</li>
+        </ul>
+        <div class="p-actions">
+          <a href="#quote" class="btn btn-ice">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- G9 -->
+      <div class="p-card r">
+        <div class="p-img-wrap">
+          <img src="brand_assets/images/g5-product-final.jpg" alt="G9 All-in-One ice bath" loading="lazy">
+        </div>
+        <span class="p-tag">All-in-One</span>
+        <h3 class="p-name">G9 ALL-IN-ONE</h3>
+        <div class="p-price">From $13,990 AUD</div>
+        <div class="p-price-gst">Inc. GST. Final quote after enquiry.</div>
+        <ul class="p-specs">
+          <li>316 stainless steel interior</li>
+          <li>Canadian cedar wood exterior</li>
+          <li>Built-in chiller — 1HP or 2HP</li>
+          <li>Temperature range: 0–45°C</li>
+          <li>Digital display panel</li>
+          <li>Colours: Black, White, Natural Wood</li>
+          <li>CE, SAA, IPX4, ETL certified</li>
+          <li>1 year warranty + Australian support</li>
+          <li>Allow 6–10 weeks for delivery Australia-wide.</li>
+        </ul>
+        <div class="p-actions">
+          <a href="#quote" class="btn btn-ice">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- SY-pro -->
+      <div class="p-card r">
+        <div class="p-img-wrap">
+          <img src="brand_assets/images/sy-pro-chiller-final.jpg" alt="SY-Pro chiller unit" loading="lazy">
+        </div>
+        <span class="p-tag">Chiller Unit</span>
+        <h3 class="p-name">SY-PRO CHILLER</h3>
+        <div class="p-price">From $5,990 AUD</div>
+        <div class="p-price-gst">Inc. GST. Final quote after enquiry.</div>
+        <ul class="p-specs">
+          <li>Temperature: 3–42°C adjustable</li>
+          <li>Heating AND cooling functions</li>
+          <li>Built-in ozone sterilisation</li>
+          <li>Built-in filtration system</li>
+          <li>WiFi remote control</li>
+          <li>5-inch TFT touch screen</li>
+          <li>1HP or 2HP options</li>
+          <li>Compatible with any tub</li>
+          <li>CE, SAA, IPX4, ETL certified</li>
+        </ul>
+        <div class="p-actions">
+          <a href="#quote" class="btn btn-ice">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- XY-pro -->
+      <div class="p-card r">
+        <div class="p-img-wrap">
+          <img src="brand_assets/images/xy-pro-chiller-final.jpg" alt="XY-Pro chiller unit" loading="lazy">
+        </div>
+        <span class="p-tag">Chiller Unit</span>
+        <h3 class="p-name">XY-PRO CHILLER</h3>
+        <div class="p-price">From $4,990 AUD</div>
+        <div class="p-price-gst">Inc. GST. Final quote after enquiry.</div>
+        <ul class="p-specs">
+          <li>Temperature: 3–42°C adjustable</li>
+          <li>Heating AND cooling functions</li>
+          <li>Built-in ozone sterilisation</li>
+          <li>Built-in filtration system</li>
+          <li>WiFi remote control</li>
+          <li>4.3-inch button screen</li>
+          <li>1HP or 2HP options</li>
+          <li>Compatible with any tub</li>
+          <li>CE, SAA, IPX4, ETL certified</li>
+        </ul>
+        <div class="p-actions">
+          <a href="#quote" class="btn btn-ice">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- Oval Tub -->
+      <div class="p-card r">
+        <div class="p-img-wrap">
+          <img src="brand_assets/images/oval-tub-final.jpg" alt="Cedar oval ice bath" loading="lazy">
+        </div>
+        <span class="p-tag">Standalone Tub</span>
+        <h3 class="p-name">OVAL TUB</h3>
+        <div class="p-price">From $5,490 AUD</div>
+        <div class="p-price-gst">Inc. GST. Final quote after enquiry.</div>
+        <ul class="p-specs">
+          <li>Cedar wood exterior</li>
+          <li>Stainless steel interior</li>
+          <li>Compatible with any chiller unit</li>
+          <li>Oval design — comfortable full-body immersion</li>
+          <li>Available in standard and large sizes</li>
+          <li>CE, SAA certified</li>
+          <li>1 year warranty + Australian support</li>
+          <li>Allow 6–10 weeks for delivery Australia-wide.</li>
+        </ul>
+        <div class="p-actions">
+          <a href="#quote" class="btn btn-ice">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- Commercial SY-COM — spans full width -->
+      <div class="p-card r">
+        <span class="p-tag">Commercial Grade</span>
+        <h3 class="p-name">COMMERCIAL SY-COM</h3>
+        <div class="p-price-poa">Price on Application</div>
+        <ul class="p-specs">
+          <li>Designed for gyms and wellness centres</li>
+          <li>1HP or 2HP options</li>
+          <li>Includes full filter system</li>
+          <li>AF25 filter + hose + 350W water pump</li>
+          <li>Bulk pricing available</li>
+          <li>Australian after-sales support</li>
+          <li>Custom installation quote available</li>
+          <li>Internationally manufactured to Australian standards</li>
+        </ul>
+        <div class="p-actions">
+          <a href="#quote" class="btn btn-ice">Get a Quote</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Hot + Cold ─────────────────────────────────────────────────────── -->
+<section id="hotcold">
+  <div class="hc-inner">
+    <div class="r">
+      <p class="eyebrow">Contrast therapy</p>
+      <h2 class="display">Hot. Cold.<br>Unstoppable.</h2>
+      <p class="hc-desc">
+        Alternating between heat and cold is one of the most powerful recovery protocols in sports science.
+        The cardiovascular stress response from contrast therapy drives adaptation that neither modality alone can achieve.
+      </p>
+      <a href="#quote" class="btn btn-ice">Enquire About Bundles</a>
+
+      <div class="hc-contrast">
+        <div class="hc-fact">
+          <strong>Vasodilation / Vasoconstriction</strong>
+          <span>Alternating heat and cold creates a powerful pump effect — flushing waste and delivering nutrients at an accelerated rate.</span>
+        </div>
+        <div class="hc-fact">
+          <strong>Hormonal Response</strong>
+          <span>The contrast protocol maximises cortisol clearance while elevating growth hormone — optimal for recovery and adaptation.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="r">
+      <div class="hc-panels">
+        <div class="hc-panel hot">
+          <span class="p-icon">🔥</span>
+          <h3 class="p-title">HEAT</h3>
+          <p class="p-text">Sauna or infrared. Core temp rises. Blood vessels dilate. Muscles relax. HSP proteins activate.</p>
+        </div>
+        <div class="hc-panel cold">
+          <span class="p-icon">🧊</span>
+          <h3 class="p-title">COLD</h3>
+          <p class="p-text">Ice bath. Vasoconstriction. Norepinephrine spikes 200–300%. Inflammation drops. Mental clarity surges.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Commercial ─────────────────────────────────────────────────────── -->
+<section id="commercial">
+  <div class="wrap">
+    <div class="com-header">
+      <div class="r">
+        <p class="eyebrow">Commercial solutions</p>
+        <h2 class="display">Built for<br>facilities.</h2>
+      </div>
+      <div class="r com-header-right">
+        <p>From boutique wellness studios to large-scale gym facilities — Terraliving commercial solutions deliver high-performance cold therapy at scale with bulk pricing and dedicated after-sales support.</p>
+        <a href="#quote" class="btn btn-ghost">Request Bulk Pricing</a>
+      </div>
+    </div>
+
+    <div class="com-stats">
+      <div class="stat r">
+        <div class="stat-n">12+</div>
+        <div class="stat-l">Units supported per facility</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-n">24h</div>
+        <div class="stat-l">After-sales response time</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-n">2.5%</div>
+        <div class="stat-l">Industry-leading defect rate</div>
+      </div>
+    </div>
+
+    <div class="com-img-wrap r">
+      <img src="brand_assets/images/oval-tub-final.jpg" alt="Cedar oval ice bath for commercial facilities" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ── About ───────────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="about-inner">
+    <p class="eyebrow r">Who we are</p>
+    <h2 class="display r">WHO WE ARE</h2>
+    <p class="about-body r">
+      Terraliving is a Sunshine Coast based wellness company bringing premium cold therapy equipment to Australian homes, gyms and wellness centres. We're locals — not a faceless online store. Every enquiry is handled personally.
+    </p>
+    <p class="about-location r">📍 Sunshine Coast, Queensland</p>
+    <div class="about-trust r">
+      <span class="about-trust-badge">Local QLD Business</span>
+      <span class="about-trust-badge">Australia-wide Delivery</span>
+      <span class="about-trust-badge">Personal Service</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Quote Form ─────────────────────────────────────────────────────── -->
+<section id="quote">
+  <div class="q-inner">
+    <div class="q-info r">
+      <p class="eyebrow">Get a custom quote</p>
+      <h2 class="display">Ready to take<br>the plunge?</h2>
+      <p style="font-size:16px;color:var(--secondary);line-height:1.68;max-width:420px;">
+        Tell us about your setup and we'll put together a tailored quote.
+        Our Sydney team responds within one business day.
+      </p>
+
+      <div class="q-promises">
+        <div class="q-promise">
+          <div class="q-icon">⚡</div>
+          <div>
+            <strong>24-hour response</strong>
+            <span>Our Sydney-based team responds to every enquiry within one business day.</span>
+          </div>
+        </div>
+        <div class="q-promise">
+          <div class="q-icon">🛡️</div>
+          <div>
+            <strong>1-year warranty</strong>
+            <span>Every Terraliving product is backed by a full 12-month warranty.</span>
+          </div>
+        </div>
+        <div class="q-promise">
+          <div class="q-icon">📦</div>
+          <div>
+            <strong>Australia-wide delivery</strong>
+            <span>We deliver to every major city and most regional areas across Australia.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-form r">
+      <h3 class="q-form-title">GET A QUOTE</h3>
+      <form id="quoteForm" action="mailto:alejandro.franco.portillo@gmail.com" method="post" enctype="text/plain" novalidate>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Full Name *</label>
+            <input type="text" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="f-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="f-group">
+          <label>Phone (optional)</label>
+          <input type="tel" name="phone" placeholder="+61 400 000 000">
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Product Interest</label>
+            <select name="product">
+              <option value="">Select a product...</option>
+              <option>G5 All-in-One</option>
+              <option>G9 All-in-One</option>
+              <option>SY-pro Chiller</option>
+              <option>XY-pro Chiller</option>
+              <option>Commercial SY-COM</option>
+              <option>Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>Quantity</label>
+            <select name="quantity">
+              <option value="">Select quantity...</option>
+              <option>1</option>
+              <option>2–5</option>
+              <option>6–10</option>
+              <option>10+</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us about your setup — residential or commercial, indoor or outdoor, any specific requirements..."></textarea>
+        </div>
+        <button type="submit" class="f-submit">Send Enquiry →</button>
+      </form>
+      <div class="form-success" id="quoteSuccess">Thank you! We'll be in touch within 24 hours.</div>
+      <p class="form-note">We typically respond within 24 hours on business days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── General Enquiry ────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info r">
+      <p class="eyebrow">General enquiry</p>
+      <h2 class="display">Got a question?</h2>
+      <p style="font-size:16px;color:var(--secondary);line-height:1.68;max-width:400px;">
+        Not ready for a quote yet? Send us a message and we'll get back to you personally.
+      </p>
+      <div class="q-promises" style="margin-top:36px;">
+        <div class="q-promise">
+          <div class="q-icon">📍</div>
+          <div>
+            <strong>Sunshine Coast, Queensland</strong>
+            <span>A local business — every message is read and replied to personally.</span>
+          </div>
+        </div>
+        <div class="q-promise">
+          <div class="q-icon">⚡</div>
+          <div>
+            <strong>Fast responses</strong>
+            <span>We typically respond within 24 hours on business days.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-form r">
+      <h3 class="q-form-title">SEND A MESSAGE</h3>
+      <form id="contactForm" action="mailto:alejandro.franco.portillo@gmail.com" method="post" enctype="text/plain" novalidate>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Full Name *</label>
+            <input type="text" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="f-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="f-group">
+          <label>Subject</label>
+          <select name="subject">
+            <option value="">Select a subject...</option>
+            <option>Product Question</option>
+            <option>Pricing</option>
+            <option>Delivery</option>
+            <option>Commercial</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="f-submit">Send Message →</button>
+      </form>
+      <div class="form-success" id="contactSuccess">Message received! We'll respond within 24 hours.</div>
+      <p class="form-note">We typically respond within 24 hours on business days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-logo">TERRA<em>LIVING</em></div>
+    <div class="foot-copy">
+      © 2026 Terraliving Pty Ltd &nbsp;·&nbsp; Sunshine Coast, Queensland &nbsp;·&nbsp; Australia-wide Delivery
+    </div>
+    <div class="foot-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#quote">Get a Quote</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <p class="foot-disclaimer">All prices in AUD inc. GST and subject to change based on exchange rates.</p>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('navHamburger');
+  const drawer    = document.getElementById('navDrawer');
+  const overlay   = document.getElementById('navOverlay');
+
+  function openDrawer() {
+    hamburger.classList.add('open');
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    hamburger.classList.remove('open');
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
+  overlay.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Opt-in to scroll reveal only when JS is running
+  document.documentElement.classList.add('js-reveal');
+
+  // IntersectionObserver reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+
+  document.querySelectorAll('.r').forEach((el, i) => {
+    const parent = el.parentElement;
+    if (parent && (parent.classList.contains('benefits-grid') || parent.classList.contains('products-grid'))) {
+      el.style.transitionDelay = (i % 8) * 55 + 'ms';
+    }
+    io.observe(el);
+  });
+
+  // Form submit handlers
+  function handleFormSubmit(formId, successId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      form.style.display = 'none';
+      const success = document.getElementById(successId);
+      success.style.display = 'block';
+    });
+  }
+  handleFormSubmit('quoteForm', 'quoteSuccess');
+  handleFormSubmit('contactForm', 'contactSuccess');
+</script>
+</body>
+</html>
