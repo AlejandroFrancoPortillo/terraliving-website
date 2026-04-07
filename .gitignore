@@ -2,3 +2,4 @@
 node_modules/
 temp_screenshots/
 *.log
+.vercel
