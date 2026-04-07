@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "terraliving",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-p", "3456", "."],
+      "runtimeExecutable": "/usr/bin/ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "/tmp/terraliving", "-p", "3456"],
       "port": 3456
     }
   ]
