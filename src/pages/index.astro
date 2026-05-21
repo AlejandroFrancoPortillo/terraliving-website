@@ -1,17 +1,127 @@
 ---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ProductCard from "../components/ProductCard.astro";
 
+const allProducts = await getCollection("products");
+const products = allProducts
+  .map(p => p.data)
+  .sort((a, b) => a.priceCents - b.priceCents);
+
+const mechanismMap: Record<string, string> = {
+  "recalibrate-tea": "Eight plants — ginkgo, brahmi, gotu kola — support cerebral blood flow and unhurried attention across the morning.",
+  "brain-chocolate": "Theobromine from 85% cacao plus L-theanine and lion's mane produce calm, sustained focus without a caffeine spike.",
+  "earthsheet": "A silver-fibre conductive grid transfers earth electrons through a safety resistor during sleep, supporting nervous-system regulation.",
+  "broccoli-sprout-powder": "Three-day sprouts carry up to 100× the sulforaphane precursor of mature broccoli, supporting the NRF2 oxidative-stress pathway.",
+};
+
+const timeOfDayMap: Record<string, string> = {
+  "recalibrate-tea": "Day",
+  "brain-chocolate": "Mid-day",
+  "earthsheet": "Night",
+  "broccoli-sprout-powder": "Daily",
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Terraliving — Tools for a clear, grounded nervous system">
+  <Header slot="header" />
+
+  <!-- 1. Hero -->
+  <section class="relative min-h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
+    <img
+      src="/images/home-hero.svg"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <!-- subtle gradient to anchor the bottom text -->
+    <div class="absolute inset-0 bg-gradient-to-t from-clay/60 via-clay/10 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 pb-24 px-12 max-w-4xl">
+      <p class="eyebrow">TERRALIVING · QUEENSLAND</p>
+      <h1
+        class="font-display font-light text-ink mt-6 leading-[1.05] tracking-tight"
+        style="font-size: clamp(56px, 7vw, 96px);"
+      >
+        Tools for a clear, grounded nervous system.
+      </h1>
+      <p class="text-lg text-stone mt-6 max-w-xl" style="font-family: var(--font-body);">
+        Four small rituals, designed in Queensland.
+      </p>
+      <a
+        href="/shop"
+        class="bg-terracotta text-clay px-6 py-3 text-sm font-medium uppercase tracking-wider mt-8 inline-block hover:opacity-90"
+      >
+        Shop the ritual
+      </a>
+    </div>
+  </section>
+
+  <!-- 2. Thesis -->
+  <section class="py-32 max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="flex justify-center">
+      <img src="/images/ginkgo-leaf.svg" alt="" class="w-32 opacity-70" />
+    </div>
+    <div>
+      <p class="eyebrow">The thesis</p>
+      <p class="font-display text-[1.75rem] italic text-ink mt-4 leading-relaxed">
+        "We don't believe in supplement stacks. We believe in four small rituals — a daytime tea for clarity, a square of dark chocolate for focus, a half-sheet that grounds you to the earth while you sleep, and a daily spoon of sprouted broccoli for the long arc. Four touchpoints, one nervous system."
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. The Four Tools -->
+  <section class="max-w-6xl mx-auto px-6">
+    <h2 class="font-display text-[3rem] text-ink text-center">The four tools.</h2>
+    {products.map((product, i) => (
+      <ProductCard
+        product={product}
+        imagePosition={i % 2 === 0 ? "left" : "right"}
+      />
+    ))}
+  </section>
+
+  <!-- 4. The Mechanism strip -->
+  <section class="bg-bone py-24 mt-20">
+    <p class="eyebrow text-center">The mechanism</p>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6 mt-10">
+      {products.map(product => (
+        <div class="py-6 px-4">
+          <p class="eyebrow text-sage">{timeOfDayMap[product.slug] ?? ""}</p>
+          <h3 class="font-display text-2xl mt-3 text-ink">{product.name}</h3>
+          <p class="mt-3 text-sm text-stone leading-relaxed">
+            {mechanismMap[product.slug] ?? ""}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 5. From Sunshine Coast -->
+  <section class="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto px-6 py-32 gap-12 items-center">
+    <div>
+      <img
+        src="/images/founder-portrait.svg"
+        alt="The founder in a sunlit Queensland kitchen"
+        class="aspect-[4/5] object-cover w-full bg-bone"
+      />
+    </div>
+    <div>
+      <p class="eyebrow">From the founder</p>
+      <h2 class="font-display text-4xl text-ink mt-4 leading-tight">Made on the Sunshine Coast.</h2>
+      <p class="mt-6 text-ink leading-relaxed" style="font-size: 17px; font-family: var(--font-body);">
+        These four products came out of a personal search — years of reading research, working alongside herbalists, and running quiet experiments on my own body. I grew up between Colombia and Australia, in two traditions that both took plants and land seriously. What I found was that the nervous system doesn't need complexity. It needs the right four touchpoints across the day: a clear-headed morning, a focused midday, a reset at night, and a slow long-arc practice that compounds over months. I found the right partners — a textile mill, a mushroom grower, a network of herbalists — all within reach of the Sunshine Coast.
+      </p>
+      <a
+        href="/about"
+        class="mt-6 inline-block text-sage underline underline-offset-4 hover:text-terracotta"
+        style="font-family: var(--font-body); font-size: 0.9rem;"
+      >
+        Read the story →
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
