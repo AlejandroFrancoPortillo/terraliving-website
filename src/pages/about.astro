@@ -1,0 +1,82 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Base title="The story">
+  <Header slot="header" />
+
+  <!-- Hero band -->
+  <section class="grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto px-6 py-16 gap-12 items-center">
+    <div class="md:col-span-2">
+      <img src="/images/founder-portrait.svg" alt="The founder in a sunlit Queensland kitchen" class="w-full aspect-[4/5] object-cover bg-bone" />
+    </div>
+    <div>
+      <p class="eyebrow">The story</p>
+      <h1 class="font-display text-5xl mt-4 text-ink leading-tight">Made on the Sunshine Coast.</h1>
+      <p class="mt-4 text-stone italic" style="font-family: var(--font-display); font-size: 1.1rem;">Notes from the founder.</p>
+    </div>
+  </section>
+
+  <!-- Founding story -->
+  <section class="max-w-2xl mx-auto px-6 py-16">
+    <p class="text-lg leading-relaxed text-ink mb-6">
+      I grew up moving between Colombia and Australia, between a grandmother who kept an entire apothecary in her kitchen and a school system that treated the body like a machine requiring the right fuel inputs. Both traditions were trying to say the same thing. The body knows how to regulate itself — it just needs the right environment.
+    </p>
+    <p class="text-lg leading-relaxed text-ink mb-6">
+      The four tools came out of four separate years of reading and running quiet experiments on myself. The tea started because a herbalist friend blended something for a period of overwork — eight plants, nothing exotic, just plants that traditional use has long associated with blood flow to the brain. I drank it for three weeks and noticed I could sit with a problem for longer before reaching for distraction. The chocolate came after a focused experiment: could you design a square of dark cacao that tasted like a reward but worked like a tool? Lion's mane from an Australian grower, L-theanine, 85% single-origin cacao, mineral salt. One square over the tongue for thirty seconds. It took months to get the balance right.
+    </p>
+    <p class="text-lg leading-relaxed text-ink mb-6">
+      The earthsheet arrived after a full year of disrupted sleep. I had read the grounding research — the idea that direct contact with the earth's electron field may support nervous-system regulation — and I found myself sleeping in the garden on warm nights and waking up feeling more rested than I had in months. I wanted that effect available in a bed, every night, in a product that was actually built with care. We found an Australian textile mill willing to weave organic cotton with a silver-fibre conductive grid to spec. The broccoli sprout powder was last — a quiet practice that began after reading the sulforaphane research, the long-arc data on NRF2 and oxidative stress. Half a teaspoon a day stirred into water. Not dramatic. Cumulative.
+    </p>
+    <p class="text-lg leading-relaxed text-ink mb-6">
+      Terraliving is not a wellness brand in the conventional sense. There are no claims here that these tools cure anything. They are inputs — traditional plants, food-grade powders, a sheet that keeps you connected to the planet beneath your floor — that support the body's own capacity to regulate. The nervous system does the work. We just try to give it what it needs, in a form that fits into an actual day. Made in small batches, on the Sunshine Coast, with no rush and no shortcuts.
+    </p>
+  </section>
+
+  <!-- Sourcing two-column -->
+  <section class="bg-bone py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto px-12 gap-12">
+      <div>
+        <p class="eyebrow">Sourcing</p>
+        <h3 class="font-display text-2xl mt-3 text-ink">Tea &amp; chocolate</h3>
+        <p class="mt-3 text-sm text-ink leading-relaxed">Herbs organically grown in Australia and traditional regions. Cacao single-origin from Ecuador, finished into 85% dark bars in the QLD workshop. Lion's mane sourced from an Australian mushroom grower.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Sourcing</p>
+        <h3 class="font-display text-2xl mt-3 text-ink">Earthsheet &amp; sprouts</h3>
+        <p class="mt-3 text-sm text-ink leading-relaxed">Earthsheet woven in partnership with an Australian textile mill — 100% organic cotton with silver-fibre conductive grid. Broccoli sprouts grown and sprouted to peak sulforaphane in Queensland, then dehydrated low-temperature and milled.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values band -->
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <h3 class="font-display text-2xl text-ink">Traditional + tested.</h3>
+        <p class="mt-3 text-sm text-stone leading-relaxed">We work with herbalists who can name every plant on sight, and we read the peer-reviewed research. The ritual matters more than the marketing.</p>
+      </div>
+      <div>
+        <h3 class="font-display text-2xl text-ink">Made in Australia.</h3>
+        <p class="mt-3 text-sm text-stone leading-relaxed">Packaged in Queensland. The earthsheet is woven in Australia. The cacao and herbs are sourced where they grow best, then finished in our workshop.</p>
+      </div>
+      <div>
+        <h3 class="font-display text-2xl text-ink">Small batch, no rush.</h3>
+        <p class="mt-3 text-sm text-stone leading-relaxed">Every order ships within five business days. If a product runs out, we'd rather pause than cut corners. Patience is part of the system.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="max-w-2xl mx-auto px-6 py-16">
+    <p class="font-display italic text-2xl text-ink text-center leading-relaxed">"We won't tell you these tools cure anything. They support the body's own work — traditional plants, food-grade powders, a sheet that connects you to the planet beneath your floor. The nervous system does the rest."</p>
+  </section>
+
+  <!-- CTA back -->
+  <section class="text-center pb-24">
+    <a href="/shop" class="inline-block bg-terracotta text-clay px-6 py-3 text-sm font-medium uppercase tracking-wider hover:opacity-90">See the four tools →</a>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
