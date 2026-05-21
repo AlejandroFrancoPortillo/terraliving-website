@@ -56,6 +56,8 @@ const hasMultipleFormats = product.data.formats.length > 1;
       <button
         class="add-to-cart mt-6 w-full bg-terracotta text-clay py-4 text-sm font-medium uppercase tracking-wider hover:opacity-90"
         data-slug={product.data.slug}
+        data-name={product.data.name}
+        data-image={product.data.heroImage}
         data-default-sku={defaultFormat.sku}
         data-default-price-cents={defaultFormat.priceCents}
       >Add to basket</button>

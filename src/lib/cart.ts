@@ -5,6 +5,7 @@ export type LineItem = {
   name: string;
   priceCents: number;
   qty: number;
+  image?: string;
 };
 
 const STORAGE_KEY = "terraliving:cart";

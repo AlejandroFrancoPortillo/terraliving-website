@@ -80,4 +80,18 @@ describe("cart store", () => {
     expect(parsed).toHaveLength(1);
     expect(parsed[0].sku).toBe("earthsheet-half");
   });
+
+  test("addToCart stores optional image and name correctly", async () => {
+    const { addToCart, getCart, clearCart } = await import("../../src/lib/cart");
+    clearCart();
+    addToCart({
+      sku: "earthsheet-half",
+      name: "Earthsheet",
+      priceCents: 14900,
+      image: "/images/products/earthsheet-hero.svg",
+    });
+    const item = getCart()[0];
+    expect(item.name).toBe("Earthsheet");
+    expect(item.image).toBe("/images/products/earthsheet-hero.svg");
+  });
 });

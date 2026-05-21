@@ -17,10 +17,12 @@ export default function CartDrawer() {
       const sku = btn.dataset.defaultSku;
       const priceCentsRaw = btn.dataset.defaultPriceCents;
       const slug = btn.dataset.slug;
+      const name = btn.dataset.name;
+      const image = btn.dataset.image;
       if (!sku || !priceCentsRaw || !slug) return;
       const priceCents = Number(priceCentsRaw);
       if (Number.isNaN(priceCents) || priceCents <= 0) return;
-      addToCart({ sku, name: slug, priceCents });
+      addToCart({ sku, name: name ?? slug, priceCents, image });
       isOpen.value = true;
     };
     document.addEventListener("click", onAddToCart);
@@ -81,7 +83,11 @@ export default function CartDrawer() {
             <ul class="px-8 divide-y divide-stone/30 flex-1">
               {items.map(item => (
                 <li class="flex gap-4 py-4">
-                  <div class="w-20 h-20 bg-bone flex-shrink-0" />
+                  {item.image ? (
+                    <img src={item.image} alt={item.name} class="w-20 h-20 object-cover bg-bone flex-shrink-0" />
+                  ) : (
+                    <div class="w-20 h-20 bg-bone flex-shrink-0" />
+                  )}
                   <div class="flex-1">
                     <p class="font-display text-lg text-ink">{item.name}</p>
                     <p class="text-sm text-stone mt-1">${(item.priceCents / 100).toFixed(2)} AUD</p>
