@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductCard from "../../components/ProductCard.astro";
+
+const products = (await getCollection("products"))
+  .map(p => p.data)
+  .sort((a, b) => a.priceCents - b.priceCents);
+---
+<Base title="Shop the four tools">
+  <Header slot="header" />
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <p class="eyebrow">Shop</p>
+    <h1 class="font-display text-6xl mt-4 text-ink">The four tools.</h1>
+    <p class="mt-4 text-stone max-w-xl">One nervous system. Four touchpoints across the day. Pick one to begin — the tea is the gentlest entry, the earthsheet the most transformative.</p>
+    {products.map((p, i) => (
+      <ProductCard product={p} imagePosition={i % 2 === 0 ? "left" : "right"} />
+    ))}
+  </section>
+  <Footer slot="footer" />
+</Base>
