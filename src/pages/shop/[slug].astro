@@ -1,0 +1,104 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const products = await getCollection("products");
+  return products.map(p => ({
+    params: { slug: p.data.slug },
+    props: { product: p },
+  }));
+}
+
+const { product } = Astro.props;
+const { Content } = await render(product);
+const defaultFormat = product.data.formats[0];
+const defaultPriceAUD = (defaultFormat.priceCents / 100).toFixed(2);
+const hasMultipleFormats = product.data.formats.length > 1;
+---
+<Base title={product.data.name}>
+  <Header slot="header" />
+
+  <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div class="md:col-span-2">
+      <img src={product.data.heroImage} alt={product.data.name} class="w-full aspect-[4/5] object-cover bg-bone" />
+    </div>
+    <aside>
+      <p class="eyebrow">{product.data.eyebrow}</p>
+      <h1 class="font-display text-5xl text-ink mt-3 leading-tight">{product.data.name}</h1>
+      <p class="mt-4 text-stone leading-relaxed">{product.data.promise}</p>
+
+      {hasMultipleFormats && (
+        <div class="mt-6 flex flex-wrap gap-2">
+          {product.data.formats.map((f, i) => (
+            <button
+              data-sku={f.sku}
+              data-price-cents={f.priceCents}
+              class:list={[
+                "format-pill",
+                "bg-bone",
+                "border",
+                "px-4",
+                "py-2",
+                "text-sm",
+                "hover:border-terracotta",
+                i === 0 ? "border-terracotta" : "border-stone/40",
+              ]}
+            >{f.label} · ${(f.priceCents / 100).toFixed(2)}</button>
+          ))}
+        </div>
+      )}
+
+      <p class="mt-6 font-medium text-2xl text-ink" id="current-price">AUD ${defaultPriceAUD}</p>
+
+      <button
+        class="add-to-cart mt-6 w-full bg-terracotta text-clay py-4 text-sm font-medium uppercase tracking-wider hover:opacity-90"
+        data-slug={product.data.slug}
+        data-default-sku={defaultFormat.sku}
+        data-default-price-cents={defaultFormat.priceCents}
+      >Add to basket</button>
+
+      <p class="mt-4 text-xs text-stone">{product.data.shippingNote}</p>
+    </aside>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-16">
+    <article class="prose-terraliving">
+      <Content />
+    </article>
+  </section>
+
+  <Footer slot="footer" />
+
+  <script>
+    const formatPills = document.querySelectorAll<HTMLButtonElement>(".format-pill");
+    const addBtn = document.querySelector<HTMLButtonElement>(".add-to-cart");
+    const priceEl = document.getElementById("current-price");
+
+    formatPills.forEach(btn => {
+      btn.addEventListener("click", () => {
+        formatPills.forEach(b => {
+          b.classList.remove("border-terracotta");
+          b.classList.add("border-stone/40");
+        });
+        btn.classList.remove("border-stone/40");
+        btn.classList.add("border-terracotta");
+        const priceCents = Number(btn.dataset.priceCents);
+        const sku = btn.dataset.sku;
+        if (priceEl) priceEl.textContent = `AUD $${(priceCents / 100).toFixed(2)}`;
+        if (addBtn && sku) {
+          addBtn.dataset.defaultSku = sku;
+          addBtn.dataset.defaultPriceCents = String(priceCents);
+        }
+      });
+    });
+  </script>
+</Base>
+
+<style is:global>
+  .prose-terraliving h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--color-ink); margin-top: 2.5rem; margin-bottom: 1rem; }
+  .prose-terraliving p { color: var(--color-ink); line-height: 1.7; margin-bottom: 1rem; max-width: 65ch; }
+  .prose-terraliving strong { color: var(--color-ink); font-weight: 500; }
+</style>
