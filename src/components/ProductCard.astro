@@ -1,0 +1,28 @@
+---
+interface Props {
+  product: {
+    slug: string;
+    name: string;
+    eyebrow: string;
+    promise: string;
+    priceCents: number;
+    heroImage: string;
+  };
+  imagePosition?: "left" | "right";
+}
+const { product, imagePosition = "left" } = Astro.props;
+const priceAUD = (product.priceCents / 100).toFixed(2);
+const order = imagePosition === "left" ? "md:flex-row" : "md:flex-row-reverse";
+---
+<article class={`flex flex-col ${order} gap-12 items-center my-20`}>
+  <div class="md:flex-[2] w-full">
+    <img src={product.heroImage} alt={product.name} class="w-full aspect-[4/5] object-cover bg-bone" />
+  </div>
+  <div class="md:flex-1">
+    <p class="eyebrow">{product.eyebrow}</p>
+    <h3 class="font-display text-4xl text-ink mt-3">{product.name}</h3>
+    <p class="text-stone mt-3 text-base leading-relaxed">{product.promise}</p>
+    <p class="mt-6 font-medium text-ink">AUD ${priceAUD}</p>
+    <a href={`/shop/${product.slug}`} class="inline-block mt-4 text-sage hover:text-terracotta underline underline-offset-4">View →</a>
+  </div>
+</article>
