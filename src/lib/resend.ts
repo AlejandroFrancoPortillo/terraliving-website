@@ -1,7 +1,14 @@
 import { Resend } from "resend";
 
-const resendKey = import.meta.env.RESEND_API_KEY ?? process.env.RESEND_API_KEY ?? "";
-const resend = new Resend(resendKey);
+let _resend: Resend | null = null;
+
+const getResend = (): Resend | null => {
+  if (_resend) return _resend;
+  const key = import.meta.env.RESEND_API_KEY ?? process.env.RESEND_API_KEY ?? "";
+  if (!key) return null;
+  _resend = new Resend(key);
+  return _resend;
+};
 
 const FROM = import.meta.env.RESEND_FROM ?? process.env.RESEND_FROM ?? "hello@terraliving.com.au";
 const FOUNDER_INBOX = import.meta.env.RESEND_FOUNDER_INBOX ?? process.env.RESEND_FOUNDER_INBOX ?? "";
@@ -36,7 +43,9 @@ const customerReceiptHtml = (args: ReceiptArgs): string => {
 };
 
 export const sendCustomerReceipt = async (args: ReceiptArgs): Promise<void> => {
-  await resend.emails.send({
+  const client = getResend();
+  if (!client) return;
+  await client.emails.send({
     from: FROM,
     to: args.to,
     subject: `Your Terraliving order #${args.orderNumber} is on its way`,
@@ -46,8 +55,10 @@ export const sendCustomerReceipt = async (args: ReceiptArgs): Promise<void> => {
 
 export const sendFounderAlert = async (args: ReceiptArgs): Promise<void> => {
   if (!FOUNDER_INBOX) return;
+  const client = getResend();
+  if (!client) return;
   const items = args.lineItems.map(li => `${li.name} × ${li.qty}`).join(", ");
-  await resend.emails.send({
+  await client.emails.send({
     from: FROM,
     to: FOUNDER_INBOX,
     subject: `New Terraliving order #${args.orderNumber} — ${formatAud(args.totalCents)}`,
