@@ -1,16 +1,31 @@
 import Stripe from "stripe";
 import type { PricedLineItem } from "./pricing";
 
-const stripeKey = import.meta.env.STRIPE_SECRET_KEY ?? process.env.STRIPE_SECRET_KEY ?? "";
-if (!stripeKey) console.warn("STRIPE_SECRET_KEY not set");
+let _stripe: Stripe | null = null;
 
-export const stripe = new Stripe(stripeKey);
+const getStripeClient = (): Stripe => {
+  if (!_stripe) {
+    const key = import.meta.env.STRIPE_SECRET_KEY ?? process.env.STRIPE_SECRET_KEY;
+    if (!key) throw new Error("STRIPE_SECRET_KEY not set");
+    _stripe = new Stripe(key);
+  }
+  return _stripe;
+};
+
+// Lazy-initialised Stripe client. All property access flows through getStripeClient(),
+// so the SDK is never constructed until first use. This avoids module-load crashes
+// during astro build when STRIPE_SECRET_KEY isn't set yet.
+export const stripe = new Proxy({} as Stripe, {
+  get(_target, prop) {
+    return (getStripeClient() as Stripe & Record<string, unknown>)[prop as keyof Stripe];
+  },
+});
 
 export const createCheckoutSession = async (
   lineItems: PricedLineItem[],
   origin: string,
 ): Promise<{ url: string | null }> => {
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripeClient().checkout.sessions.create({
     mode: "payment",
     payment_method_types: ["card"],
     currency: "aud",
