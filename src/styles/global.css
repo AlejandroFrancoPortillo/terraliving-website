@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-clay: #EFE8DD;
+  --color-ink: #2A2620;
+  --color-sage: #7C8B6A;
+  --color-terracotta: #B5613F;
+  --color-bone: #F8F4EC;
+  --color-stone: #8C8276;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --spacing-section-desktop: 7.5rem;
+  --spacing-section-mobile: 4rem;
+}
+
+html { font-family: var(--font-body); color: var(--color-ink); background: var(--color-clay); }
+body { font-feature-settings: "ss01", "ss02"; }
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/CormorantGaramond-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/Inter-VariableFont.woff2") format("woff2");
+}
+
+.eyebrow { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-stone); }
