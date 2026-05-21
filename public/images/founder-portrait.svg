@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <title>Founder Portrait</title>
+  <desc>A stylized portrait of the founder — a man in his 30s, 3/4-view, sitting at a kitchen table with a teapot and eucalyptus vase, drawn in hand-drawn ink and sage linework with generous negative space.</desc>
+
+  <!-- Bone background -->
+  <rect width="800" height="1000" fill="#F8F4EC"/>
+
+  <!-- Subtle light from window — very faint diagonal band suggesting window light on left -->
+  <path d="M0 0 L180 0 L280 1000 L0 1000Z" fill="#EFE8DD" fill-opacity="0.3"/>
+
+  <!-- =============================================
+       WINDOW PANEL — left side, light source
+       ============================================= -->
+  <!-- Window frame — upper left -->
+  <g stroke="#2A2620" stroke-width="1" opacity="0.25">
+    <!-- Outer window frame -->
+    <rect x="30" y="60" width="140" height="200" rx="4"/>
+    <!-- Center cross divider -->
+    <line x1="100" y1="60" x2="100" y2="260"/>
+    <line x1="30" y1="158" x2="170" y2="158"/>
+    <!-- Sill below window -->
+    <line x1="20" y1="264" x2="180" y2="264"/>
+  </g>
+
+  <!-- =============================================
+       TABLE SURFACE — lower portion
+       ============================================= -->
+  <!-- Wooden table surface — suggested by horizontal lines at lower portion -->
+  <!-- Table top edge -->
+  <path d="M0 730 C100 726 200 724 300 722 C400 720 500 720 600 720 C680 720 740 722 800 724"
+    stroke="#2A2620" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Wood grain on table -->
+  <g stroke="#8C8276" stroke-width="0.5" stroke-linecap="round" opacity="0.18">
+    <path d="M0 740 C150 738 300 736 500 738 C650 740 750 742 800 742"/>
+    <path d="M0 758 C100 756 300 754 500 756 C650 758 750 760 800 760"/>
+    <path d="M0 776 C150 774 350 772 500 774 C650 776 750 778 800 778"/>
+    <path d="M0 794 C100 792 300 790 500 792 C650 794 750 796 800 796"/>
+    <path d="M0 812 C150 810 350 808 500 810 C650 812 750 814 800 814"/>
+    <!-- Knot detail in wood -->
+    <path d="M160 758 C165 754 174 754 178 758 C178 764 168 768 160 764 C155 760 156 756 160 758"/>
+  </g>
+
+  <!-- =============================================
+       TEAPOT ON TABLE — small, center-left
+       ============================================= -->
+  <g transform="translate(300, 680)">
+    <!-- Teapot body — small, round -->
+    <path d="M0 44
+      C0 44 -28 44 -38 30
+      C-46 18 -44 -2 -34 -14
+      C-24 -24 -6 -28 10 -26
+      C26 -24 38 -14 40 -2
+      C42 10 36 26 24 36
+      C14 44 4 46 0 44Z"
+      stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.8"/>
+
+    <!-- Spout -->
+    <path d="M-34 14 C-44 10 -54 6 -58 2 C-60 -1 -58 -5 -54 -5 C-48 -5 -40 0 -34 8"
+      stroke="#2A2620" stroke-width="1" stroke-linecap="round" fill="none"/>
+
+    <!-- Handle -->
+    <path d="M40 0 C50 0 56 8 54 18 C52 26 44 30 36 28"
+      stroke="#2A2620" stroke-width="1" stroke-linecap="round" fill="none"/>
+
+    <!-- Lid -->
+    <path d="M-10 -26 C-2 -30 12 -30 18 -26 C20 -24 18 -22 12 -21 C4 -20 -4 -20 -10 -22 C-14 -24 -13 -26 -10 -26Z"
+      stroke="#2A2620" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.8"/>
+    <!-- Lid knob -->
+    <path d="M4 -26 C3 -30 3 -34 4 -36 C5 -34 5 -30 4 -26" stroke="#2A2620" stroke-width="0.8" stroke-linecap="round"/>
+
+    <!-- Steam wisps -->
+    <path d="M-56 -5 C-58 -12 -54 -20 -56 -28 C-58 -36 -60 -42 -58 -50"
+      stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.3"/>
+    <path d="M-52 -5 C-50 -12 -54 -18 -52 -26 C-50 -34 -48 -42 -50 -48"
+      stroke="#2A2620" stroke-width="0.5" stroke-linecap="round" opacity="0.2"/>
+  </g>
+
+  <!-- =============================================
+       EUCALYPTUS VASE — right side of table
+       ============================================= -->
+  <g transform="translate(580, 660)">
+    <!-- Small vase body -->
+    <path d="M0 60 C-14 60 -22 52 -24 38 C-26 24 -22 10 -16 4 C-10 -2 -4 -4 0 -4 C4 -4 10 -2 16 4 C22 10 26 24 24 38 C22 52 14 60 0 60Z"
+      stroke="#2A2620" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.7"/>
+    <!-- Vase neck -->
+    <path d="M-8 -4 C-6 -10 -4 -14 0 -16 C4 -14 6 -10 8 -4"
+      stroke="#2A2620" stroke-width="1" stroke-linecap="round" fill="none"/>
+
+    <!-- Eucalyptus stems — arching upward from vase -->
+    <!-- Stem 1 — leans left -->
+    <path d="M-2 -16 C-4 -40 -10 -80 -18 -120 C-24 -150 -28 -180 -22 -210"
+      stroke="#7C8B6A" stroke-width="1.1" stroke-linecap="round"/>
+    <!-- Leaves on stem 1 — small ovals alternating -->
+    <path d="M-10 -60 C-16 -66 -24 -64 -26 -58 C-24 -52 -16 -52 -10 -56 C-8 -58 -9 -60 -10 -60"
+      stroke="#7C8B6A" stroke-width="0.9" stroke-linecap="round"/>
+    <path d="M-14 -90 C-8 -96 0 -94 2 -88 C0 -82 -8 -82 -14 -86 C-16 -88 -15 -90 -14 -90"
+      stroke="#7C8B6A" stroke-width="0.9" stroke-linecap="round"/>
+    <path d="M-18 -125 C-24 -131 -32 -129 -34 -123 C-32 -117 -24 -117 -18 -121 C-16 -123 -17 -125 -18 -125"
+      stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M-20 -155 C-14 -161 -6 -159 -4 -153 C-6 -147 -14 -147 -20 -151 C-22 -153 -21 -155 -20 -155"
+      stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M-22 -185 C-28 -191 -36 -189 -38 -183 C-36 -177 -28 -177 -22 -181 C-20 -183 -21 -185 -22 -185"
+      stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round"/>
+
+    <!-- Stem 2 — center, goes up straight -->
+    <path d="M2 -16 C2 -45 0 -85 -2 -130 C-4 -165 -4 -195 0 -230"
+      stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+    <path d="M2 -55 C8 -61 16 -59 18 -53 C16 -47 8 -47 2 -51 C0 -53 1 -55 2 -55"
+      stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M0 -100 C-6 -106 -14 -104 -16 -98 C-14 -92 -6 -92 0 -96 C2 -98 1 -100 0 -100"
+      stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M-2 -150 C4 -156 12 -154 14 -148 C12 -142 4 -142 -2 -146 C-4 -148 -3 -150 -2 -150"
+      stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round"/>
+    <path d="M-1 -195 C-7 -201 -15 -199 -17 -193 C-15 -187 -7 -187 -1 -191 C1 -193 0 -195 -1 -195"
+      stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round"/>
+
+    <!-- Stem 3 — leans right -->
+    <path d="M4 -16 C8 -42 14 -78 22 -118 C28 -148 34 -178 30 -210"
+      stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+    <path d="M16 -65 C22 -71 30 -69 32 -63 C30 -57 22 -57 16 -61 C14 -63 15 -65 16 -65"
+      stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M20 -100 C14 -106 6 -104 4 -98 C6 -92 14 -92 20 -96 C22 -98 21 -100 20 -100"
+      stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round"/>
+    <path d="M26 -138 C32 -144 40 -142 42 -136 C40 -130 32 -130 26 -134 C24 -136 25 -138 26 -138"
+      stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round"/>
+  </g>
+
+  <!-- =============================================
+       THE FIGURE — 3/4 view, sitting
+       Man in his 30s, calm, dark hair
+       Figure occupies right-center area
+       Generous negative space: figure is small in frame
+       ============================================= -->
+
+  <!-- Chair back — suggested behind figure -->
+  <path d="M440 750 C440 680 440 600 440 530 C440 520 444 515 452 514 C460 513 466 518 468 528 C468 600 468 680 468 750"
+    stroke="#2A2620" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
+  <!-- Chair back top rail -->
+  <path d="M436 530 C440 522 460 518 472 524" stroke="#2A2620" stroke-width="1.1" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- FIGURE — body position: seated, leaning slightly forward -->
+
+  <!-- Torso — the main shape, dressed in simple top -->
+  <path d="M380 730
+    C376 710 372 690 370 670
+    C368 650 368 630 372 610
+    C376 590 382 575 392 562
+    C400 552 410 548 420 548
+    C430 548 440 552 448 562
+    C456 572 460 585 462 600
+    C464 620 462 644 458 668
+    C454 692 450 714 448 730Z"
+    stroke="#2A2620" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.4"/>
+
+  <!-- Clothing detail — collar/neckline -->
+  <path d="M408 548 C410 542 412 538 414 536 C416 538 418 542 420 548"
+    stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Left arm on table -->
+  <path d="M372 670 C368 690 364 708 358 720 C350 730 340 734 330 734 C320 734 310 730 302 726"
+    stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <!-- Left hand resting on table — simplified palm + fingers -->
+  <path d="M302 726 C294 722 286 720 280 720 C276 720 274 722 276 724 C280 726 290 726 302 726"
+    stroke="#2A2620" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <!-- Finger lines -->
+  <path d="M282 720 C278 716 276 712 278 710" stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+  <path d="M288 720 C285 714 285 708 287 706" stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+  <path d="M295 720 C294 714 294 708 296 706" stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Right arm, angled down -->
+  <path d="M450 660 C454 680 458 700 462 716 C464 724 466 728 466 730"
+    stroke="#2A2620" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+
+  <!-- NECK -->
+  <path d="M408 548 C404 536 402 524 403 514 C404 506 407 502 414 502 C421 502 424 506 425 514 C426 524 424 536 420 548"
+    stroke="#2A2620" stroke-width="1.1" stroke-linecap="round" fill="#F8F4EC" fill-opacity="0.6"/>
+
+  <!-- HEAD — 3/4 view, turned slightly left -->
+  <!-- Head shape -->
+  <path d="M414 502
+    C414 502 390 498 378 480
+    C366 462 366 440 374 422
+    C382 404 398 394 416 392
+    C434 390 450 398 460 414
+    C470 430 470 452 462 468
+    C454 482 438 492 426 497
+    C420 500 416 502 414 502Z"
+    stroke="#2A2620" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.8"/>
+
+  <!-- DARK HAIR — on top and sides of head -->
+  <!-- Top of head hair, slightly textured -->
+  <path d="M378 460 C372 444 372 424 378 410 C384 396 394 388 406 386 C414 384 422 386 430 390"
+    stroke="#2A2620" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <!-- Hair detail strands -->
+  <path d="M380 450 C376 435 376 415 382 400" stroke="#2A2620" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M386 464 C382 448 381 428 384 412" stroke="#2A2620" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+  <path d="M394 468 C390 450 388 432 390 416" stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+  <path d="M406 470 C402 452 400 435 402 420" stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+  <path d="M416 470 C416 452 415 436 418 422" stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+  <path d="M428 468 C430 452 432 436 432 420" stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" opacity="0.25"/>
+
+  <!-- FACIAL FEATURES — minimal, calm expression -->
+  <!-- Eye left (far, foreshortened) -->
+  <path d="M390 440 C393 436 398 435 401 438 C398 442 393 442 390 440"
+    stroke="#2A2620" stroke-width="1" stroke-linecap="round"/>
+  <!-- Pupil left -->
+  <circle cx="396" cy="439" r="1.2" fill="#2A2620" opacity="0.7"/>
+
+  <!-- Eye right -->
+  <path d="M414 438 C418 434 424 433 428 436 C425 440 418 441 414 438"
+    stroke="#2A2620" stroke-width="1" stroke-linecap="round"/>
+  <!-- Pupil right -->
+  <circle cx="421" cy="437" r="1.5" fill="#2A2620" opacity="0.7"/>
+
+  <!-- Eyebrow left — subtle -->
+  <path d="M388 434 C393 430 400 429 403 432" stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" opacity="0.7"/>
+  <!-- Eyebrow right -->
+  <path d="M413 432 C418 428 426 427 430 430" stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Nose — 3/4 view, just the underside suggested -->
+  <path d="M410 448 C410 454 410 460 408 464 C410 466 414 466 416 464"
+    stroke="#2A2620" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
+  <!-- Nostril suggestion -->
+  <path d="M408 464 C406 466 406 468 408 468" stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Mouth — calm, slightly closed -->
+  <path d="M404 476 C408 472 416 472 420 475 C416 478 408 478 404 476"
+    stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Ear — right, 3/4 view shows more ear -->
+  <path d="M460 438 C464 434 468 434 470 438 C470 446 466 454 462 456 C460 454 460 446 460 440"
+    stroke="#2A2620" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+  <!-- Light/shadow on face — very faint line suggesting cheekbone lit from window left -->
+  <path d="M385 445 C388 440 392 436 397 434" stroke="#2A2620" stroke-width="0.4" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- =============================================
+       ATMOSPHERIC DETAILS — keep it airy
+       ============================================= -->
+
+  <!-- Dust motes / light particles in the window light — very faint -->
+  <g opacity="0.12" stroke="#8C8276">
+    <circle cx="90" cy="350" r="1.5"/>
+    <circle cx="140" cy="320" r="1"/>
+    <circle cx="70" cy="400" r="1"/>
+    <circle cx="110" cy="380" r="1.5"/>
+    <circle cx="55" cy="450" r="1"/>
+    <circle cx="160" cy="420" r="1"/>
+  </g>
+
+  <!-- Very faint horizontal lines on lower bone background — atmosphere -->
+  <g opacity="0.06" stroke="#8C8276" stroke-width="0.5">
+    <line x1="0" y1="820" x2="800" y2="820"/>
+    <line x1="0" y1="870" x2="800" y2="870"/>
+    <line x1="0" y1="920" x2="800" y2="920"/>
+    <line x1="0" y1="970" x2="800" y2="970"/>
+  </g>
+
+</svg>

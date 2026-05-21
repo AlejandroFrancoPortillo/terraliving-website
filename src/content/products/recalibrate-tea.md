@@ -12,7 +12,7 @@ formats:
   - sku: tea-sachets-20
     label: Pyramid sachets · 20-bag box
     priceCents: 2800
-heroImage: /images/products/recalibrate-tea-hero.jpg
+heroImage: /images/products/recalibrate-tea-hero.svg
 ---
 
 ## The blend

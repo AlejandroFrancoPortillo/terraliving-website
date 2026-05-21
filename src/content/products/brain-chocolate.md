@@ -9,7 +9,7 @@ formats:
   - sku: chocolate-bar-85
     label: Single 85% bar, 8 squares
     priceCents: 2200
-heroImage: /images/products/brain-chocolate-hero.jpg
+heroImage: /images/products/brain-chocolate-hero.svg
 ---
 
 ## Per square

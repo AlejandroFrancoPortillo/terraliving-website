@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <title>Ginkgo Biloba Leaf</title>
+  <desc>A single fan-shaped Ginkgo biloba leaf with characteristic radial veins, rendered in sage botanical line-art.</desc>
+
+  <!-- Fan-shaped ginkgo leaf with natural cleft at top center -->
+  <!-- Stem -->
+  <path d="M100 185 L100 135" stroke="#7C8B6A" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Main leaf outline — fan with cleft at top -->
+  <!-- Left lobe of fan -->
+  <path d="M100 135
+    C100 135 78 128 60 115
+    C42 102 28 85 22 68
+    C16 52 20 36 30 26
+    C38 18 50 15 62 18
+    C72 20 82 28 90 38
+    C95 45 98 54 99 65
+    L100 120"
+    stroke="#7C8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right lobe of fan -->
+  <path d="M100 135
+    C100 135 122 128 140 115
+    C158 102 172 85 178 68
+    C184 52 180 36 170 26
+    C162 18 150 15 138 18
+    C128 20 118 28 110 38
+    C105 45 102 54 101 65
+    L100 120"
+    stroke="#7C8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Natural cleft at top center — the defining ginkgo feature -->
+  <path d="M100 120 L100 68" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Radial veins — left lobe, fanning from stem base -->
+  <path d="M100 135 C92 120 72 105 52 88" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M100 135 C88 118 65 100 42 78" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M100 135 C86 115 60 95 35 68" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+  <path d="M100 135 C88 112 66 88 38 52" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+  <path d="M100 135 C94 110 80 82 62 44" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Radial veins — right lobe -->
+  <path d="M100 135 C108 120 128 105 148 88" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M100 135 C112 118 135 100 158 78" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M100 135 C114 115 140 95 165 68" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+  <path d="M100 135 C112 112 134 88 162 52" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+  <path d="M100 135 C106 110 120 82 138 44" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Slight asymmetry — secondary veins on left lobe -->
+  <path d="M74 108 C70 98 65 88 60 76" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M56 90 C52 80 48 70 46 60" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Secondary veins right lobe -->
+  <path d="M126 108 C130 98 135 88 140 76" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M144 90 C148 80 152 70 154 60" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Small bud detail at stem base -->
+  <path d="M98 140 C97 145 97 150 100 155 C103 150 103 145 102 140" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+</svg>

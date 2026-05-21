@@ -9,7 +9,7 @@ formats:
   - sku: earthsheet-half
     label: Half-sheet 90 × 270 cm
     priceCents: 14900
-heroImage: /images/products/earthsheet-hero.jpg
+heroImage: /images/products/earthsheet-hero.svg
 ---
 
 ## The product

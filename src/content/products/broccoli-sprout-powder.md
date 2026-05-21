@@ -12,7 +12,7 @@ formats:
   - sku: sprouts-sachets-15
     label: Travel sachets 15 × 2g
     priceCents: 3200
-heroImage: /images/products/broccoli-sprout-powder-hero.jpg
+heroImage: /images/products/broccoli-sprout-powder-hero.svg
 ---
 
 ## Why sprouts, not florets

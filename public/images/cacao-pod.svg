@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <title>Cacao Pod</title>
+  <desc>A cacao pod hanging from a branch with one leaf, in sage botanical line-art with hand-illustrated character.</desc>
+
+  <!-- Branch at top — slightly gnarled, hand-drawn -->
+  <path d="M20 30 C40 28 65 26 90 28 C110 30 130 28 160 22 C175 19 185 18 195 20"
+    stroke="#7C8B6A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Branch bark detail -->
+  <path d="M35 28 C36 25 37 28 36 30" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
+  <path d="M72 27 C73 24 74 27 73 29" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Short stem connecting pod to branch -->
+  <path d="M100 28 C100 35 100 42 100 48" stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Leaf petiole and leaf -->
+  <path d="M75 26 C72 22 74 16 82 14" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+  <!-- Leaf shape — long oval -->
+  <path d="M82 14 C90 8 102 8 110 14 C116 19 116 28 110 34 C102 40 90 40 82 34 C76 29 76 19 82 14"
+    stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Leaf midrib -->
+  <path d="M82 14 C92 20 100 28 110 34" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/>
+  <!-- Lateral veins -->
+  <path d="M88 17 C89 14 92 12 95 13" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M94 22 C95 18 99 16 103 17" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M98 28 C99 24 104 23 108 24" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M88 30 C86 27 84 24 85 20" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Cacao pod — oblong, slightly asymmetric, ridged -->
+  <!-- Main pod outline — football/oblong shape, slightly wider at center -->
+  <path d="M100 48
+    C105 50 115 58 120 72
+    C126 88 126 110 122 126
+    C118 142 110 154 100 158
+    C90 154 82 142 78 126
+    C74 110 74 88 80 72
+    C85 58 95 50 100 48Z"
+    stroke="#7C8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Ridges — cacao pods have 10 longitudinal ridges -->
+  <!-- Left side ridges -->
+  <path d="M90 52 C84 65 82 95 84 125 C86 145 92 155 100 158" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.55"/>
+  <path d="M82 62 C77 78 76 104 79 128 C81 142 86 152 92 157" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.45"/>
+  <path d="M77 76 C74 90 74 112 77 133 C80 148 86 157 91 158" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Right side ridges -->
+  <path d="M110 52 C116 65 118 95 116 125 C114 145 108 155 100 158" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.55"/>
+  <path d="M118 62 C123 78 124 104 121 128 C119 142 114 152 108 157" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.45"/>
+  <path d="M123 76 C126 90 126 112 123 133 C120 148 114 157 109 158" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Surface texture marks — subtle cross lines suggesting skin -->
+  <path d="M90 80 C95 78 105 78 110 80" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.25"/>
+  <path d="M87 98 C93 96 107 96 113 98" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.25"/>
+  <path d="M87 116 C93 114 107 114 113 116" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.25"/>
+  <path d="M89 134 C94 132 106 132 111 134" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Pod tip at bottom — slight pointed end -->
+  <path d="M96 158 C98 164 100 170 100 172 C100 170 102 164 104 158" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Small dried flower remnant at top of pod (where stem meets pod) -->
+  <path d="M97 50 C96 47 96 44 98 43 C100 42 102 44 102 47 C102 49 101 51 100 51" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/>
+</svg>

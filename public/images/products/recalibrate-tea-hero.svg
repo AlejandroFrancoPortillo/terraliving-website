@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <title>Recalibrate Tea Product Hero</title>
+  <desc>A ceramic teapot with steam, a matching tea cup, and scattered dried herbs including Ginkgo, Brahmi and Cornflower on a linen mat — hand-drawn ink botanical illustration.</desc>
+
+  <!-- Bone background -->
+  <rect width="800" height="1000" fill="#F8F4EC"/>
+
+  <!-- Linen mat suggestion — horizontal band, slightly different bone -->
+  <rect x="0" y="540" width="800" height="220" fill="#EFE8DD" opacity="0.5"/>
+  <!-- Mat top edge — hand-drawn -->
+  <path d="M0 542 C100 540 200 542 350 541 C500 540 650 542 800 540"
+    stroke="#8C8276" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+  <!-- Mat bottom edge -->
+  <path d="M0 758 C100 760 200 758 350 759 C500 760 650 758 800 760"
+    stroke="#8C8276" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+  <!-- Linen texture — very faint horizontal threads -->
+  <g opacity="0.08" stroke="#8C8276" stroke-width="0.5">
+    <line x1="0" y1="558" x2="800" y2="558"/>
+    <line x1="0" y1="576" x2="800" y2="576"/>
+    <line x1="0" y1="594" x2="800" y2="594"/>
+    <line x1="0" y1="612" x2="800" y2="612"/>
+    <line x1="0" y1="630" x2="800" y2="630"/>
+    <line x1="0" y1="648" x2="800" y2="648"/>
+    <line x1="0" y1="666" x2="800" y2="666"/>
+    <line x1="0" y1="684" x2="800" y2="684"/>
+    <line x1="0" y1="702" x2="800" y2="702"/>
+    <line x1="0" y1="720" x2="800" y2="720"/>
+    <line x1="0" y1="738" x2="800" y2="738"/>
+  </g>
+
+  <!-- =============================================
+       TEAPOT — center, main subject
+       Tall Japanese-influenced shape, round body
+       ============================================= -->
+
+  <!-- Teapot body — round and generous -->
+  <path d="M400 680
+    C400 680 328 676 296 640
+    C268 608 266 562 282 530
+    C298 498 334 478 372 470
+    C400 464 428 464 456 470
+    C494 478 530 498 546 530
+    C562 562 560 608 532 640
+    C500 676 400 680 400 680Z"
+    stroke="#2A2620" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.7"/>
+
+  <!-- Teapot spout — long, graceful, curves left -->
+  <path d="M296 580 C272 572 248 562 228 548 C214 538 210 528 216 520
+    C222 512 236 512 250 518 C264 524 282 536 296 550"
+    stroke="#2A2620" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+  <!-- Spout tip detail -->
+  <path d="M212 522 C210 516 212 510 218 510" stroke="#2A2620" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Teapot handle — curves right -->
+  <path d="M546 536 C572 536 590 548 594 566 C598 584 588 604 570 610 C560 614 548 610 542 600"
+    stroke="#2A2620" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+
+  <!-- Lid — slightly domed -->
+  <path d="M366 470 C374 458 390 452 400 451 C410 452 426 458 434 470"
+    stroke="#2A2620" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+  <!-- Lid rim detail -->
+  <path d="M364 472 C372 468 396 465 404 465 C416 465 432 468 436 472"
+    stroke="#2A2620" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/>
+  <!-- Lid knob — small button -->
+  <path d="M397 451 C394 444 394 436 397 432 C400 436 400 444 400 451"
+    stroke="#2A2620" stroke-width="1.1" stroke-linecap="round"/>
+  <circle cx="399" cy="432" r="4" stroke="#2A2620" stroke-width="1" fill="none"/>
+
+  <!-- Teapot surface character — a gentle horizontal emphasis -->
+  <path d="M294 570 C320 560 380 556 400 556 C420 556 480 558 506 566"
+    stroke="#2A2620" stroke-width="0.5" stroke-linecap="round" opacity="0.18"/>
+  <path d="M280 605 C308 592 370 588 400 588 C430 588 492 592 520 603"
+    stroke="#2A2620" stroke-width="0.5" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- Teapot base shadow -->
+  <path d="M320 678 C340 684 380 686 400 686 C420 686 460 684 480 678"
+    stroke="#8C8276" stroke-width="0.6" stroke-linecap="round" opacity="0.28"/>
+
+  <!-- Steam — curling wisps from spout and lid -->
+  <!-- Spout steam -->
+  <path d="M214 516 C208 504 212 490 208 476 C204 462 200 450 204 436"
+    stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" opacity="0.3"/>
+  <path d="M222 514 C226 500 222 486 226 472 C230 458 234 447 230 432"
+    stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.22"/>
+
+  <!-- Lid steam -->
+  <path d="M394 430 C390 416 394 400 390 384 C386 368 382 355 386 340"
+    stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" opacity="0.28"/>
+  <path d="M402 430 C406 416 402 400 406 384 C410 368 414 357 410 342"
+    stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.2"/>
+  <path d="M408 430 C414 418 412 405 416 392 C420 380 424 368 420 354"
+    stroke="#2A2620" stroke-width="0.5" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- =============================================
+       TEA CUP — to the right of teapot
+       ============================================= -->
+
+  <!-- Cup body — small, cylindrical, slightly tapered -->
+  <path d="M590 640
+    C590 640 560 640 548 624
+    C540 612 540 594 548 582
+    C556 570 572 564 590 564
+    C608 564 624 570 632 582
+    C640 594 640 612 632 624
+    C620 640 590 640 590 640Z"
+    stroke="#2A2620" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.7"/>
+
+  <!-- Cup handle — simple loop -->
+  <path d="M632 590 C644 590 650 596 648 606 C646 614 638 618 632 614"
+    stroke="#2A2620" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+
+  <!-- Golden tea inside cup — sage fill, the only sage fill in the image set -->
+  <!-- Tea surface — circular, at top of cup interior -->
+  <path d="M552 580 C562 572 578 569 590 569 C602 569 618 572 628 580 C618 586 602 588 590 588 C578 588 562 586 552 580Z"
+    stroke="none" fill="#7C8B6A" fill-opacity="0.22"/>
+  <!-- Tea surface rim line -->
+  <path d="M552 580 C562 572 578 568 590 568 C602 568 618 572 628 580"
+    stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Cup base shadow -->
+  <path d="M558 638 C572 644 610 644 622 638"
+    stroke="#8C8276" stroke-width="0.5" stroke-linecap="round" opacity="0.25"/>
+
+  <!-- =============================================
+       SCATTERED DRIED HERBS — around base
+       ============================================= -->
+
+  <!-- Full Ginkgo leaf — lower left, natural placement -->
+  <g transform="translate(156, 790) rotate(25)" opacity="0.75">
+    <line x1="0" y1="56" x2="0" y2="24" stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Left fan -->
+    <path d="M0 24 C-8 19 -22 10 -30 0 C-38 -10 -38 -22 -32 -28 C-24 -34 -14 -30 -6 -20 C-2 -14 0 -6 0 4"
+      stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <!-- Right fan -->
+    <path d="M0 24 C8 19 22 10 30 0 C38 -10 38 -22 32 -28 C24 -34 14 -30 6 -20 C2 -14 0 -6 0 4"
+      stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <!-- Cleft -->
+    <line x1="0" y1="4" x2="0" y2="-24" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round"/>
+    <!-- Veins -->
+    <path d="M0 24 C-8 14 -18 4 -26 -6" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M0 24 C-4 12 -10 2 -30 -14" stroke="#7C8B6A" stroke-width="0.4" stroke-linecap="round" opacity="0.45"/>
+    <path d="M0 24 C8 14 18 4 26 -6" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M0 24 C4 12 10 2 30 -14" stroke="#7C8B6A" stroke-width="0.4" stroke-linecap="round" opacity="0.45"/>
+  </g>
+
+  <!-- Brahmi sprig — right side of composition, lower -->
+  <g transform="translate(650, 820) rotate(-20)" opacity="0.7">
+    <!-- Stem -->
+    <path d="M0 80 C0 60 0 40 0 22 C0 10 0 0 0 -10" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+    <!-- Leaf pair 1 -->
+    <path d="M0 60 C-8 55 -18 54 -22 58 C-20 64 -12 66 0 62" stroke="#7C8B6A" stroke-width="0.9" stroke-linecap="round"/>
+    <path d="M0 60 C8 55 18 54 22 58 C20 64 12 66 0 62" stroke="#7C8B6A" stroke-width="0.9" stroke-linecap="round"/>
+    <!-- Leaf pair 2 -->
+    <path d="M0 38 C-7 33 -16 32 -19 36 C-17 42 -10 44 0 40" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M0 38 C7 33 16 32 19 36 C17 42 10 44 0 40" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <!-- Leaf pair 3 -->
+    <path d="M0 18 C-6 14 -13 14 -15 18 C-13 22 -7 24 0 20" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round"/>
+    <path d="M0 18 C6 14 13 14 15 18 C13 22 7 24 0 20" stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round"/>
+    <!-- Flower at tip -->
+    <path d="M0 -10 C-2 -16 -2 -22 0 -24 C2 -22 2 -16 0 -10"/>
+    <path d="M0 -10 C6 -12 10 -10 11 -8 C10 -6 6 -6 0 -10"/>
+    <path d="M0 -10 C4 -4 4 0 2 2 C0 2 -4 -2 0 -10"/>
+    <path d="M0 -10 C-4 -4 -4 0 -2 2 C0 2 4 -2 0 -10"/>
+    <path d="M0 -10 C-6 -12 -10 -10 -11 -8 C-10 -6 -6 -6 0 -10"/>
+    <circle cx="0" cy="-10" r="2" stroke="#7C8B6A" stroke-width="0.8"/>
+  </g>
+
+  <!-- Cornflower — center front, decorative -->
+  <g transform="translate(400, 820)" stroke="#7C8B6A" stroke-width="0.9" opacity="0.72">
+    <!-- Stem -->
+    <line x1="0" y1="80" x2="0" y2="16" stroke-linecap="round" stroke-width="1"/>
+    <!-- Small bract leaves on stem -->
+    <path d="M0 50 C-6 46 -10 42 -8 38 C-4 36 0 40 0 48" stroke-linecap="round" stroke-width="0.7"/>
+    <path d="M0 50 C6 46 10 42 8 38 C4 36 0 40 0 48" stroke-linecap="round" stroke-width="0.7"/>
+    <!-- Petals — cornflower has tubular petals radiating -->
+    <path d="M0 16 C-3 8 -4 0 -2 -4 C0 -6 2 -4 4 0 C4 4 2 10 0 16"/>
+    <path d="M0 16 C7 12 14 8 16 4 C17 2 15 -1 12 0 C8 2 4 8 0 16"/>
+    <path d="M0 16 C8 18 14 22 15 26 C15 28 12 29 9 27 C6 24 3 19 0 16"/>
+    <path d="M0 16 C4 22 4 28 2 31 C0 32 -2 31 -2 28 C-2 24 -1 19 0 16"/>
+    <path d="M0 16 C-8 18 -14 22 -15 26 C-15 28 -12 29 -9 27 C-6 24 -3 19 0 16"/>
+    <path d="M0 16 C-7 12 -14 8 -16 4 C-17 2 -15 -1 -12 0 C-8 2 -4 8 0 16"/>
+    <!-- Center disc -->
+    <circle cx="0" cy="12" r="5" stroke-width="1.1"/>
+    <!-- Center stipple -->
+    <circle cx="0" cy="10" r="1" fill="#7C8B6A" opacity="0.4"/>
+    <circle cx="2" cy="13" r="1" fill="#7C8B6A" opacity="0.4"/>
+    <circle cx="-2" cy="13" r="1" fill="#7C8B6A" opacity="0.4"/>
+  </g>
+
+  <!-- Small herb leaf fragments scattered -->
+  <g stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round" opacity="0.55">
+    <!-- Fragment 1 -->
+    <path d="M252 760 C254 755 260 756 260 760 C259 764 253 764 252 760"/>
+    <!-- Fragment 2 -->
+    <path d="M280 800 C278 795 272 796 272 800 C273 804 279 804 280 800"/>
+    <!-- Fragment 3 -->
+    <path d="M320 770 C322 765 328 766 328 770 C327 774 321 774 320 770"/>
+    <!-- Fragment 4 -->
+    <path d="M480 790 C482 785 488 786 488 790 C487 794 481 794 480 790"/>
+    <!-- Fragment 5 -->
+    <path d="M530 760 C528 755 522 756 522 760 C523 764 529 764 530 760"/>
+    <!-- Stem fragment -->
+    <line x1="298" y1="780" x2="312" y2="786"/>
+    <line x1="510" y1="772" x2="520" y2="778"/>
+  </g>
+
+  <!-- A few dried loose tea leaves visible — irregular curved shapes -->
+  <g stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.4">
+    <path d="M200 830 C202 826 206 826 208 830 C208 834 204 836 200 834 Z"/>
+    <path d="M340 850 C342 846 348 846 350 850 C350 854 344 856 340 854 Z"/>
+    <path d="M462 840 C464 836 469 836 470 840 C470 844 465 846 462 844 Z"/>
+    <path d="M580 820 C582 816 587 816 588 820 C588 824 583 826 580 824 Z"/>
+    <path d="M680 840 C682 836 688 836 689 840 C689 844 683 846 680 844 Z"/>
+  </g>
+
+</svg>

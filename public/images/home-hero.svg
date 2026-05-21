@@ -1,0 +1,357 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <title>Terraliving Home Hero — Flat-lay Ritual Objects</title>
+  <desc>An overhead linen-runner scene featuring an earthsheet textile, ceramic teapot with steam, chocolate square, amber jar, and scattered dried herbs — rendered in hand-drawn ink botanical line-art on a warm bone background.</desc>
+
+  <!-- Background — warm bone -->
+  <rect width="1600" height="900" fill="#F8F4EC"/>
+
+  <!-- Faint diagonal grain marks suggesting linen/paper texture — very sparse, low opacity -->
+  <!-- Diagonal lines group — running SW to NE -->
+  <g opacity="0.035" stroke="#2A2620" stroke-width="0.8">
+    <line x1="0" y1="300" x2="300" y2="0"/>
+    <line x1="0" y1="500" x2="500" y2="0"/>
+    <line x1="0" y1="700" x2="700" y2="0"/>
+    <line x1="0" y1="900" x2="900" y2="0"/>
+    <line x1="200" y1="900" x2="1100" y2="0"/>
+    <line x1="400" y1="900" x2="1300" y2="0"/>
+    <line x1="600" y1="900" x2="1500" y2="0"/>
+    <line x1="800" y1="900" x2="1600" y2="100"/>
+    <line x1="1000" y1="900" x2="1600" y2="300"/>
+    <line x1="1200" y1="900" x2="1600" y2="500"/>
+    <line x1="1400" y1="900" x2="1600" y2="700"/>
+  </g>
+
+  <!-- Linen runner — wide horizontal band slightly warmer than background -->
+  <!-- Subtle tint: a very faint warm rectangle spanning full width, centered vertically -->
+  <rect x="0" y="290" width="1600" height="320" fill="#EFE8DD" opacity="0.45"/>
+
+  <!-- Linen runner top and bottom edge — very faint, hand-drawn feel -->
+  <path d="M0 292 C200 290 400 293 600 291 C800 289 1000 292 1200 290 C1400 288 1550 291 1600 290"
+    stroke="#8C8276" stroke-width="0.8" opacity="0.2" stroke-linecap="round"/>
+  <path d="M0 608 C200 610 400 607 600 609 C800 611 1000 608 1200 610 C1400 612 1550 609 1600 610"
+    stroke="#8C8276" stroke-width="0.8" opacity="0.2" stroke-linecap="round"/>
+
+  <!-- =============================================
+       LEFT THIRD: EARTHSHEET (hero object)
+       Intentionally quieter / less dense for headline overlay
+       ============================================= -->
+
+  <!-- Folded earthsheet textile — draped fabric rectangle, slightly angled for naturalness -->
+  <!-- Main sheet body -->
+  <path d="M80 350 C85 345 120 340 180 342 C240 344 300 346 340 348
+           C340 348 342 430 340 480 C338 520 335 560 330 580
+           C290 582 240 580 180 578 C130 576 90 572 80 565
+           C78 530 76 480 78 440 C78 400 78 365 80 350Z"
+    stroke="#2A2620" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.6"/>
+
+  <!-- Silver-fibre grid on the sheet — characteristic product detail -->
+  <!-- Horizontal grid lines -->
+  <g stroke="#8C8276" stroke-width="0.6" opacity="0.35">
+    <line x1="85" y1="368" x2="335" y2="366"/>
+    <line x1="85" y1="388" x2="335" y2="386"/>
+    <line x1="85" y1="408" x2="335" y2="406"/>
+    <line x1="85" y1="428" x2="334" y2="426"/>
+    <line x1="84" y1="448" x2="334" y2="446"/>
+    <line x1="84" y1="468" x2="333" y2="466"/>
+    <line x1="84" y1="488" x2="333" y2="486"/>
+    <line x1="84" y1="508" x2="332" y2="506"/>
+    <line x1="84" y1="528" x2="332" y2="526"/>
+    <line x1="84" y1="548" x2="332" y2="546"/>
+    <line x1="84" y1="568" x2="330" y2="566"/>
+  </g>
+  <!-- Vertical grid lines -->
+  <g stroke="#8C8276" stroke-width="0.6" opacity="0.35">
+    <line x1="105" y1="344" x2="103" y2="576"/>
+    <line x1="125" y1="344" x2="123" y2="577"/>
+    <line x1="145" y1="345" x2="143" y2="578"/>
+    <line x1="165" y1="345" x2="163" y2="578"/>
+    <line x1="185" y1="345" x2="183" y2="578"/>
+    <line x1="205" y1="346" x2="203" y2="578"/>
+    <line x1="225" y1="346" x2="223" y2="578"/>
+    <line x1="245" y1="347" x2="243" y2="578"/>
+    <line x1="265" y1="347" x2="263" y2="578"/>
+    <line x1="285" y1="347" x2="283" y2="578"/>
+    <line x1="305" y1="347" x2="303" y2="578"/>
+    <line x1="322" y1="347" x2="321" y2="578"/>
+  </g>
+
+  <!-- Sheet fold line — top edge has a folded-over portion showing different facing -->
+  <path d="M80 350 C120 342 200 340 280 342 C310 343 330 346 340 348"
+    stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <!-- Fold shadow — a subtle line below fold -->
+  <path d="M82 358 C120 352 200 350 280 352 C310 353 330 355 340 356"
+    stroke="#2A2620" stroke-width="0.6" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Folded-over top flap (different face of fabric) -->
+  <path d="M80 350 C80 348 80 344 82 342 C120 338 200 336 280 338 C310 339 332 342 340 344
+           C340 346 340 348 340 348
+           C320 346 300 344 280 342 C200 340 120 342 80 350Z"
+    stroke="none" fill="#EFE8DD" fill-opacity="0.5"/>
+
+  <!-- Grounding cord — dangles from bottom corner of sheet -->
+  <path d="M300 580 C302 590 304 604 308 618 C312 632 318 642 324 648"
+    stroke="#2A2620" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Cord plug end — small rectangle -->
+  <rect x="320" y="646" width="10" height="16" rx="2" stroke="#2A2620" stroke-width="1.1" fill="none"/>
+  <!-- Plug prongs -->
+  <line x1="323" y1="662" x2="323" y2="668" stroke="#2A2620" stroke-width="0.9" stroke-linecap="round"/>
+  <line x1="327" y1="662" x2="327" y2="668" stroke="#2A2620" stroke-width="0.9" stroke-linecap="round"/>
+
+  <!-- Sheet corner crease marks — give fabric life -->
+  <path d="M80 565 C84 568 88 572 90 576" stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.4"/>
+  <path d="M330 348 C333 352 336 356 338 360" stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.4"/>
+
+
+  <!-- =============================================
+       CENTER: CERAMIC TEAPOT
+       ============================================= -->
+
+  <!-- Teapot body — round, low, slightly flattened -->
+  <path d="M700 480
+    C700 480 660 478 640 460
+    C622 443 618 418 628 400
+    C638 382 660 372 690 370
+    C720 368 748 374 764 392
+    C780 410 778 438 760 456
+    C742 472 720 480 700 480Z"
+    stroke="#2A2620" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.7"/>
+
+  <!-- Teapot spout — curved, angled left -->
+  <path d="M636 436 C622 430 606 424 596 418 C588 413 586 408 590 404 C594 400 602 400 612 404 C622 408 634 416 642 424"
+    stroke="#2A2620" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Spout opening hole -->
+  <path d="M588 408 C588 404 592 400 596 401" stroke="#2A2620" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Teapot handle — curved C shape right side -->
+  <path d="M760 416 C778 416 792 424 796 436 C800 448 794 462 778 464 C770 465 762 462 758 456"
+    stroke="#2A2620" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Teapot lid — small, flat disc with button finial -->
+  <path d="M678 370 C688 366 712 366 722 370 C726 372 726 376 720 378 C710 380 690 380 680 378 C674 376 674 372 678 370Z"
+    stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.8"/>
+  <!-- Lid finial knob -->
+  <path d="M700 366 C697 362 697 356 700 354 C703 356 703 362 700 366" stroke="#2A2620" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Teapot surface detail — subtle horizontal lines suggesting glaze -->
+  <path d="M642 415 C660 408 700 406 728 408 C748 410 760 415 760 420"
+    stroke="#2A2620" stroke-width="0.5" stroke-linecap="round" opacity="0.2"/>
+  <path d="M630 440 C648 432 700 430 742 432 C758 434 766 440 762 446"
+    stroke="#2A2620" stroke-width="0.5" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Teapot shadow line at base — grounding -->
+  <path d="M638 478 C660 484 700 486 740 484 C760 482 772 478 774 476"
+    stroke="#8C8276" stroke-width="0.6" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Steam wisps rising from spout and lid -->
+  <!-- Steam from spout -->
+  <path d="M590 400 C586 390 590 378 586 366 C582 354 578 344 582 332"
+    stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" opacity="0.35"/>
+  <path d="M594 398 C598 386 594 374 598 362 C602 350 606 340 602 328"
+    stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.25"/>
+  <!-- Steam from lid -->
+  <path d="M698 354 C694 344 698 332 694 320 C690 308 686 298 690 286"
+    stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" opacity="0.3"/>
+  <path d="M704 354 C708 342 704 330 708 318 C712 306 716 298 712 286"
+    stroke="#2A2620" stroke-width="0.7" stroke-linecap="round" opacity="0.2"/>
+
+
+  <!-- =============================================
+       RIGHT OF CENTER: CHOCOLATE SQUARE
+       ============================================= -->
+
+  <!-- Single chocolate square — slightly angled, as if placed casually -->
+  <g transform="translate(900, 440) rotate(-8)">
+    <!-- Square main body -->
+    <rect x="-30" y="-30" width="60" height="60" rx="3"
+      stroke="#2A2620" stroke-width="1.4" fill="#F8F4EC" fill-opacity="0.6"/>
+    <!-- Score lines suggesting it was broken from a bar -->
+    <!-- Horizontal score — top -->
+    <line x1="-30" y1="-10" x2="30" y2="-10" stroke="#2A2620" stroke-width="0.7" opacity="0.5"/>
+    <!-- Vertical score — left -->
+    <line x1="-10" y1="-30" x2="-10" y2="30" stroke="#2A2620" stroke-width="0.7" opacity="0.5"/>
+    <!-- Broken edge suggestion — slightly ragged left top corner -->
+    <path d="M-30 -30 C-28 -28 -25 -25 -24 -28 C-23 -31 -26 -33 -28 -30 C-29 -27 -30 -30 -30 -30Z"
+      stroke="#2A2620" stroke-width="0.8" fill="none" opacity="0.4"/>
+    <!-- Surface sheen — diagonal line suggesting glossy chocolate -->
+    <path d="M-18 -24 C-8 -14 2 -4 10 4" stroke="#2A2620" stroke-width="0.5" stroke-linecap="round" opacity="0.15"/>
+  </g>
+
+  <!-- Small cocoa nib fragments scattered near chocolate square -->
+  <!-- Nib 1 -->
+  <path d="M958 450 C960 447 965 448 966 451 C965 454 960 455 958 452 Z"
+    stroke="#2A2620" stroke-width="0.8" fill="none" opacity="0.5"/>
+  <!-- Nib 2 -->
+  <path d="M942 475 C944 472 948 473 949 476 C948 479 944 479 942 476 Z"
+    stroke="#2A2620" stroke-width="0.8" fill="none" opacity="0.5"/>
+  <!-- Nib 3 -->
+  <path d="M968 480 C970 477 975 478 975 481 C974 484 970 484 968 481 Z"
+    stroke="#2A2620" stroke-width="0.8" fill="none" opacity="0.4"/>
+  <!-- Nib 4 — tiny fragment -->
+  <path d="M946 455 C947 453 950 454 950 456 C949 458 947 458 946 456 Z"
+    stroke="#2A2620" stroke-width="0.7" fill="none" opacity="0.4"/>
+
+  <!-- Small shadow beneath chocolate square -->
+  <ellipse cx="900" cy="478" rx="38" ry="6" stroke="#8C8276" stroke-width="0.5" fill="none" opacity="0.2"/>
+
+
+  <!-- =============================================
+       FAR RIGHT: AMBER GLASS JAR (sprout powder)
+       ============================================= -->
+
+  <!-- Jar body — cylindrical glass jar, slightly wider at bottom -->
+  <path d="M1200 480
+    C1200 480 1165 480 1155 460
+    C1148 445 1150 400 1152 380
+    C1154 362 1160 354 1175 352
+    C1185 350 1205 350 1215 352
+    C1230 354 1238 362 1240 380
+    C1242 400 1244 445 1237 460
+    C1228 478 1200 480 1200 480Z"
+    stroke="#2A2620" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.5"/>
+
+  <!-- Jar neck — narrower top section -->
+  <path d="M1174 352 C1176 342 1178 334 1182 330 C1186 326 1194 324 1200 324 C1206 324 1214 326 1218 330 C1222 334 1224 342 1226 352"
+    stroke="#2A2620" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+
+  <!-- Jar lid/cap — small flat cap -->
+  <path d="M1180 330 C1182 322 1186 318 1200 317 C1214 318 1218 322 1220 330"
+    stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M1180 326 C1186 322 1214 322 1220 326"
+    stroke="#2A2620" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <!-- Lid band ring -->
+  <path d="M1178 330 C1186 334 1214 334 1222 330"
+    stroke="#2A2620" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+  <!-- Amber tint — sparse sage strokes inside the jar to evoke amber glass -->
+  <g opacity="0.18" stroke="#7C8B6A" stroke-width="0.6">
+    <line x1="1160" y1="380" x2="1160" y2="460"/>
+    <line x1="1167" y1="360" x2="1167" y2="470"/>
+    <line x1="1176" y1="354" x2="1176" y2="475"/>
+    <line x1="1188" y1="352" x2="1188" y2="476"/>
+    <line x1="1200" y1="352" x2="1200" y2="477"/>
+    <line x1="1212" y1="352" x2="1212" y2="476"/>
+    <line x1="1224" y1="354" x2="1224" y2="475"/>
+    <line x1="1233" y1="360" x2="1233" y2="470"/>
+    <line x1="1240" y1="378" x2="1240" y2="460"/>
+  </g>
+
+  <!-- Powder level inside jar — occupying roughly bottom half -->
+  <path d="M1156 428 C1168 424 1192 422 1200 422 C1208 422 1232 424 1244 428"
+    stroke="#2A2620" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Powder stipple — sage dotted fill below powder line -->
+  <g opacity="0.2" stroke="#7C8B6A">
+    <circle cx="1168" cy="440" r="1.5"/>
+    <circle cx="1178" cy="448" r="1.5"/>
+    <circle cx="1190" cy="434" r="1.5"/>
+    <circle cx="1202" cy="442" r="1.5"/>
+    <circle cx="1214" cy="436" r="1.5"/>
+    <circle cx="1226" cy="444" r="1.5"/>
+    <circle cx="1236" cy="440" r="1.5"/>
+    <circle cx="1172" cy="458" r="1"/>
+    <circle cx="1186" cy="464" r="1"/>
+    <circle cx="1198" cy="460" r="1"/>
+    <circle cx="1210" cy="456" r="1"/>
+    <circle cx="1222" cy="462" r="1"/>
+    <circle cx="1234" cy="456" r="1"/>
+    <circle cx="1165" cy="468" r="1"/>
+    <circle cx="1175" cy="472" r="1"/>
+    <circle cx="1190" cy="474" r="1"/>
+    <circle cx="1205" cy="470" r="1"/>
+    <circle cx="1218" cy="473" r="1"/>
+    <circle cx="1230" cy="468" r="1"/>
+    <circle cx="1240" cy="464" r="1"/>
+  </g>
+
+  <!-- Jar glass highlights — very faint vertical lines -->
+  <line x1="1164" y1="362" x2="1164" y2="440" stroke="#F8F4EC" stroke-width="1" opacity="0.5"/>
+  <line x1="1170" y1="356" x2="1170" y2="435" stroke="#F8F4EC" stroke-width="0.6" opacity="0.4"/>
+
+  <!-- Jar base shadow -->
+  <ellipse cx="1200" cy="480" rx="46" ry="7" stroke="#8C8276" stroke-width="0.5" fill="none" opacity="0.22"/>
+
+  <!-- Label area on jar — a thin rectangle with a line for product label -->
+  <rect x="1165" y="392" width="70" height="40" rx="2" stroke="#2A2620" stroke-width="0.6" fill="none" opacity="0.25"/>
+
+
+  <!-- =============================================
+       SCATTERED DRIED HERB FRAGMENTS
+       Small sage line marks dispersed across the runner area
+       ============================================= -->
+
+  <!-- Herb fragment cluster 1 — between sheet and teapot -->
+  <g stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round">
+    <!-- Small leaf shards -->
+    <path d="M450 430 C452 426 458 424 460 428 C458 432 452 432 450 430"/>
+    <path d="M470 452 C468 448 462 447 460 451 C462 455 468 456 470 452"/>
+    <path d="M480 418 C482 414 488 415 488 419 C486 422 481 421 480 418"/>
+    <path d="M440 465 C442 461 448 462 447 466 C445 469 440 468 440 465"/>
+    <path d="M510 438 C508 434 503 434 503 438 C504 442 509 442 510 438"/>
+    <!-- Tiny stem fragments -->
+    <line x1="455" y1="442" x2="465" y2="448"/>
+    <line x1="495" y1="425" x2="500" y2="432"/>
+    <line x1="465" y1="460" x2="472" y2="466"/>
+  </g>
+
+  <!-- Herb fragment cluster 2 — between teapot and chocolate -->
+  <g stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round">
+    <path d="M810 450 C812 446 818 446 818 450 C817 454 812 454 810 450"/>
+    <path d="M830 432 C832 428 837 429 836 433 C834 436 829 435 830 432"/>
+    <path d="M850 460 C848 456 843 456 843 460 C844 464 849 464 850 460"/>
+    <line x1="820" y1="440" x2="828" y2="446"/>
+    <line x1="840" y1="450" x2="846" y2="456"/>
+  </g>
+
+  <!-- Herb fragment cluster 3 — right side, between chocolate and jar -->
+  <g stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round">
+    <path d="M1050 430 C1052 426 1058 427 1057 431 C1055 434 1050 433 1050 430"/>
+    <path d="M1070 452 C1068 448 1063 449 1063 453 C1064 456 1069 456 1070 452"/>
+    <path d="M1090 440 C1092 436 1097 437 1096 441 C1094 444 1090 443 1090 440"/>
+    <line x1="1055" y1="442" x2="1062" y2="448"/>
+    <line x1="1078" y1="432" x2="1084" y2="438"/>
+  </g>
+
+  <!-- Herb fragment cluster 4 — far right, near jar -->
+  <g stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.7">
+    <path d="M1310 440 C1312 436 1317 437 1316 441 C1314 444 1310 443 1310 440"/>
+    <path d="M1330 458 C1328 454 1323 455 1323 459 C1324 462 1329 462 1330 458"/>
+    <line x1="1316" y1="450" x2="1322" y2="456"/>
+  </g>
+
+  <!-- Herb fragment — upper area, sparse -->
+  <g stroke="#7C8B6A" stroke-width="0.7" stroke-linecap="round" opacity="0.5">
+    <path d="M380 368 C382 364 387 365 386 369 C384 372 380 371 380 368"/>
+    <path d="M1420 400 C1422 396 1427 397 1426 401 C1424 404 1420 403 1420 400"/>
+    <line x1="1400" y1="420" x2="1408" y2="426"/>
+  </g>
+
+  <!-- A few scattered Ginkgo-like small leaf suggestions in the empty left third -->
+  <!-- These are very small, ghost-like, keeping the left third airy -->
+  <g opacity="0.22" stroke="#7C8B6A" stroke-width="0.7">
+    <!-- Tiny ginkgo fan shape 1 -->
+    <path d="M200 530 C196 520 190 512 188 506 C188 502 190 499 194 500 C196 502 200 510 200 518 Z"/>
+    <path d="M200 530 C204 520 210 512 212 506 C212 502 210 499 206 500 C204 502 200 510 200 518"/>
+    <line x1="200" y1="530" x2="200" y2="542"/>
+
+    <!-- Tiny ginkgo fan shape 2 -->
+    <path d="M160 440 C157 432 152 425 150 420 C150 417 152 415 155 416 C157 418 160 425 160 432 Z"/>
+    <path d="M160 440 C163 432 168 425 170 420 C170 417 168 415 165 416 C163 418 160 425 160 432"/>
+    <line x1="160" y1="440" x2="160" y2="450"/>
+  </g>
+
+  <!-- Cornflower — a small round bloom suggestion near the herbs (adding variety) -->
+  <g transform="translate(560, 390)" stroke="#7C8B6A" stroke-width="0.7" opacity="0.6">
+    <!-- Stem -->
+    <line x1="0" y1="30" x2="0" y2="0" stroke-linecap="round"/>
+    <!-- Petals — radiating around center -->
+    <path d="M0 0 C-3 -8 -2 -14 0 -15 C2 -14 3 -8 0 0"/>
+    <path d="M0 0 C7 -5 12 -4 13 -2 C12 0 7 2 0 0"/>
+    <path d="M0 0 C5 7 4 12 2 13 C0 12 -4 8 0 0"/>
+    <path d="M0 0 C-7 5 -12 4 -13 2 C-12 0 -7 -4 0 0"/>
+    <path d="M0 0 C-5 -7 -4 -12 -2 -13 C0 -12 4 -8 0 0"/>
+    <path d="M0 0 C7 5 8 10 6 12 C4 12 0 8 0 0"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="2" stroke-width="0.8"/>
+  </g>
+
+</svg>

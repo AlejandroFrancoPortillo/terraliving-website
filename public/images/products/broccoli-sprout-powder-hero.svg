@@ -1,0 +1,278 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <title>Broccoli Sprout Powder Product Hero</title>
+  <desc>A glass jar half-filled with broccoli sprout powder on a wooden surface, with a wooden scoop and broccoli flower accent — hand-drawn ink botanical illustration.</desc>
+
+  <!-- Bone background -->
+  <rect width="800" height="1000" fill="#F8F4EC"/>
+
+  <!-- =============================================
+       WOODEN SURFACE — lower portion
+       ============================================= -->
+
+  <!-- Surface horizon line -->
+  <path d="M0 680 C100 678 200 676 400 676 C600 676 700 678 800 680"
+    stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Wood grain lines -->
+  <g stroke="#8C8276" stroke-width="0.5" stroke-linecap="round" opacity="0.16">
+    <path d="M0 694 C100 692 250 690 400 692 C550 694 700 696 800 694"/>
+    <path d="M0 710 C80 708 200 706 400 708 C600 710 720 712 800 710"/>
+    <path d="M0 726 C120 724 280 722 400 724 C520 726 680 728 800 726"/>
+    <path d="M0 742 C100 740 260 738 400 740 C540 742 700 744 800 742"/>
+    <path d="M0 758 C90 756 230 754 400 756 C570 758 710 760 800 758"/>
+    <path d="M0 774 C110 772 260 770 400 772 C540 774 690 776 800 774"/>
+    <path d="M0 790 C120 788 280 786 400 788 C520 790 680 792 800 790"/>
+    <!-- Wood knot -->
+    <path d="M580 722 C586 716 598 716 604 722 C606 730 598 738 588 736 C580 732 578 726 580 722"/>
+    <path d="M570 728 C565 722 562 716 565 712" opacity="0.1"/>
+    <path d="M608 728 C614 722 618 716 616 712" opacity="0.1"/>
+  </g>
+
+  <!-- =============================================
+       GLASS JAR — main subject, center
+       Clear glass with amber tint, half-filled
+       ============================================= -->
+
+  <!-- Jar body — cylindrical, slightly wider at base -->
+  <!-- Jar outer outline -->
+  <path d="M400 676
+    C400 676 320 674 296 628
+    C278 592 278 530 284 490
+    C290 452 304 428 322 416
+    C340 404 370 398 400 397
+    C430 398 460 404 478 416
+    C496 428 510 452 516 490
+    C522 530 522 592 504 628
+    C480 674 400 676 400 676Z"
+    stroke="#2A2620" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.55"/>
+
+  <!-- Jar neck — narrower transition -->
+  <path d="M322 416 C326 396 334 380 344 368 C354 358 372 350 400 349 C428 350 446 358 456 368 C466 380 474 396 478 416"
+    stroke="#2A2620" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+
+  <!-- Jar opening rim — slight flare -->
+  <path d="M340 368 C350 356 372 348 400 347 C428 348 450 356 460 368"
+    stroke="#2A2620" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+
+  <!-- Lid / cap -->
+  <path d="M336 365 C346 350 372 342 400 341 C428 342 454 350 464 365"
+    stroke="#2A2620" stroke-width="1.5" stroke-linecap="round" fill="#EFE8DD" fill-opacity="0.8"/>
+  <!-- Lid top edge -->
+  <path d="M338 356 C350 348 374 344 400 343 C426 344 450 348 462 356"
+    stroke="#2A2620" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <!-- Lid band detail -->
+  <path d="M336 365 C346 368 374 370 400 370 C426 370 454 368 464 365"
+    stroke="#2A2620" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+  <!-- Amber tint effect — sparse vertical sage lines inside jar -->
+  <g opacity="0.12" stroke="#7C8B6A" stroke-width="0.7">
+    <line x1="302" y1="500" x2="302" y2="660"/>
+    <line x1="316" y1="450" x2="316" y2="666"/>
+    <line x1="332" y1="424" x2="332" y2="670"/>
+    <line x1="350" y1="408" x2="350" y2="672"/>
+    <line x1="370" y1="400" x2="370" y2="672"/>
+    <line x1="390" y1="397" x2="390" y2="672"/>
+    <line x1="410" y1="397" x2="410" y2="672"/>
+    <line x1="430" y1="400" x2="430" y2="672"/>
+    <line x1="450" y1="408" x2="450" y2="672"/>
+    <line x1="468" y1="424" x2="468" y2="670"/>
+    <line x1="484" y1="450" x2="484" y2="666"/>
+    <line x1="498" y1="500" x2="498" y2="660"/>
+  </g>
+
+  <!-- Powder fill level — roughly halfway up the jar -->
+  <!-- Powder surface line — slightly curved, natural settling -->
+  <path d="M296 560 C320 552 370 548 400 548 C430 548 480 552 504 558"
+    stroke="#2A2620" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Powder stipple — sage-tinted fill in lower half of jar -->
+  <!-- Dense stipple area -->
+  <g fill="#7C8B6A" opacity="0.18">
+    <circle cx="316" cy="580" r="2.5"/>
+    <circle cx="332" cy="596" r="2.5"/>
+    <circle cx="350" cy="572" r="2.5"/>
+    <circle cx="368" cy="590" r="2.5"/>
+    <circle cx="386" cy="608" r="2"/>
+    <circle cx="402" cy="578" r="2.5"/>
+    <circle cx="418" cy="594" r="2.5"/>
+    <circle cx="436" cy="614" r="2"/>
+    <circle cx="452" cy="582" r="2.5"/>
+    <circle cx="468" cy="600" r="2.5"/>
+    <circle cx="486" cy="576" r="2.5"/>
+    <circle cx="322" cy="618" r="2"/>
+    <circle cx="342" cy="636" r="2"/>
+    <circle cx="360" cy="618" r="2.5"/>
+    <circle cx="378" cy="638" r="2"/>
+    <circle cx="396" cy="626" r="2"/>
+    <circle cx="412" cy="640" r="2"/>
+    <circle cx="430" cy="622" r="2.5"/>
+    <circle cx="448" cy="638" r="2"/>
+    <circle cx="466" cy="620" r="2.5"/>
+    <circle cx="484" cy="634" r="2"/>
+    <circle cx="306" cy="648" r="1.5"/>
+    <circle cx="326" cy="658" r="1.5"/>
+    <circle cx="348" cy="660" r="1.5"/>
+    <circle cx="370" cy="658" r="1.5"/>
+    <circle cx="392" cy="664" r="1.5"/>
+    <circle cx="414" cy="660" r="1.5"/>
+    <circle cx="436" cy="658" r="1.5"/>
+    <circle cx="458" cy="660" r="1.5"/>
+    <circle cx="478" cy="656" r="1.5"/>
+    <circle cx="496" cy="646" r="1.5"/>
+    <!-- Second layer, lighter -->
+    <circle cx="310" cy="570" r="1.5" opacity="0.6"/>
+    <circle cx="340" cy="560" r="1.5" opacity="0.6"/>
+    <circle cx="365" cy="556" r="1.5" opacity="0.6"/>
+    <circle cx="395" cy="554" r="1.5" opacity="0.6"/>
+    <circle cx="420" cy="556" r="1.5" opacity="0.6"/>
+    <circle cx="448" cy="560" r="1.5" opacity="0.6"/>
+    <circle cx="476" cy="565" r="1.5" opacity="0.6"/>
+    <circle cx="498" cy="572" r="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Glass highlights — vertical bright lines on left side of jar -->
+  <line x1="310" y1="430" x2="310" y2="640" stroke="#F8F4EC" stroke-width="2.5" opacity="0.55"/>
+  <line x1="320" y1="420" x2="320" y2="645" stroke="#F8F4EC" stroke-width="1.2" opacity="0.4"/>
+  <!-- Small highlight on right -->
+  <line x1="488" y1="440" x2="488" y2="630" stroke="#F8F4EC" stroke-width="1" opacity="0.3"/>
+
+  <!-- Jar label outline — minimal, just a rectangle hint -->
+  <rect x="328" y="488" width="144" height="80" rx="4" stroke="#2A2620" stroke-width="0.7" fill="none" opacity="0.22"/>
+  <!-- Label decorative line -->
+  <line x1="336" y1="500" x2="464" y2="500" stroke="#2A2620" stroke-width="0.4" opacity="0.2"/>
+  <line x1="336" y1="556" x2="464" y2="556" stroke="#2A2620" stroke-width="0.4" opacity="0.2"/>
+
+  <!-- Base shadow beneath jar -->
+  <ellipse cx="400" cy="674" rx="108" ry="12" stroke="#8C8276" stroke-width="0.5" fill="none" opacity="0.22"/>
+
+  <!-- =============================================
+       WOODEN SCOOP — resting beside jar, right side
+       ============================================= -->
+
+  <!-- Scoop handle — long, slightly tapered wooden handle -->
+  <path d="M540 620 C558 608 578 596 598 588 C614 582 628 580 636 582"
+    stroke="#2A2620" stroke-width="2" stroke-linecap="round"/>
+  <!-- Handle wood grain hint -->
+  <path d="M556 612 C565 604 578 598 592 593"
+    stroke="#2A2620" stroke-width="0.6" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Scoop bowl — small rounded spoon bowl at handle tip -->
+  <!-- Outer bowl shape -->
+  <path d="M636 582
+    C642 578 652 576 658 580
+    C664 584 664 596 658 604
+    C652 610 640 612 634 606
+    C628 600 628 588 636 582Z"
+    stroke="#2A2620" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="#F8F4EC" fill-opacity="0.7"/>
+
+  <!-- Powder mound in scoop — small sage stipple at bottom of bowl -->
+  <g fill="#7C8B6A" opacity="0.22">
+    <circle cx="640" cy="600" r="2"/>
+    <circle cx="648" cy="598" r="2"/>
+    <circle cx="656" cy="600" r="2"/>
+    <circle cx="644" cy="606" r="1.5"/>
+    <circle cx="652" cy="606" r="1.5"/>
+  </g>
+
+  <!-- Small powder pile beside scoop on surface -->
+  <!-- Pile outline — irregular mound -->
+  <path d="M660 606 C664 600 672 596 680 598 C686 600 688 606 686 612 C682 618 672 620 664 616 C660 612 658 608 660 606Z"
+    stroke="#2A2620" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.45"/>
+  <!-- Powder pile stipple -->
+  <g fill="#7C8B6A" opacity="0.15">
+    <circle cx="668" cy="604" r="1.5"/>
+    <circle cx="675" cy="602" r="1.5"/>
+    <circle cx="680" cy="606" r="1.5"/>
+    <circle cx="672" cy="610" r="1.5"/>
+    <circle cx="679" cy="610" r="1"/>
+  </g>
+
+  <!-- =============================================
+       BROCCOLI FLOWER — lower left corner botanical accent
+       ============================================= -->
+
+  <!-- Main stem -->
+  <g transform="translate(150, 850)" opacity="0.72">
+    <path d="M0 110 C0 90 0 68 0 50" stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Broad brassica leaf on left -->
+    <path d="M0 80 C-12 72 -28 64 -38 68 C-46 72 -46 82 -38 88 C-28 94 -12 90 0 82"
+      stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0 80 C-14 80 -28 80 -38 80" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- Branch left -->
+    <path d="M0 50 C-8 44 -16 38 -22 30" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+    <!-- Branch center -->
+    <path d="M0 50 C0 42 0 34 0 26" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+    <!-- Branch right -->
+    <path d="M0 50 C8 44 16 38 22 30" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round"/>
+
+    <!-- Sub-branches left cluster -->
+    <path d="M-22 30 C-26 24 -28 18 -26 12" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M-22 30 C-22 24 -20 18 -18 12" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <!-- Sub-branches center cluster -->
+    <path d="M0 26 C-4 20 -4 14 -2 8" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M0 26 C0 18 0 12 0 6" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M0 26 C4 20 4 14 2 8" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <!-- Sub-branches right cluster -->
+    <path d="M22 30 C22 24 20 18 18 12" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M22 30 C26 24 28 18 26 12" stroke="#7C8B6A" stroke-width="0.8" stroke-linecap="round"/>
+
+    <!-- Brassica 4-petaled florets at branch tips -->
+    <!-- Floret: left cluster -->
+    <g transform="translate(-26,10)" stroke="#7C8B6A" stroke-width="0.7">
+      <path d="M0 0 C-1 -4 -1 -7 0 -8 C1 -7 1 -4 0 0"/>
+      <path d="M0 0 C4 -1 7 -1 8 0 C7 1 4 1 0 0"/>
+      <path d="M0 0 C1 4 1 7 0 8 C-1 7 -1 4 0 0"/>
+      <path d="M0 0 C-4 1 -7 1 -8 0 C-7 -1 -4 -1 0 0"/>
+      <circle cx="0" cy="0" r="1.5" stroke-width="0.8"/>
+    </g>
+    <g transform="translate(-18,10)" stroke="#7C8B6A" stroke-width="0.7">
+      <path d="M0 0 C-1 -4 -1 -7 0 -8 C1 -7 1 -4 0 0"/>
+      <path d="M0 0 C4 -1 7 -1 8 0 C7 1 4 1 0 0"/>
+      <path d="M0 0 C1 4 1 7 0 8 C-1 7 -1 4 0 0"/>
+      <path d="M0 0 C-4 1 -7 1 -8 0 C-7 -1 -4 -1 0 0"/>
+      <circle cx="0" cy="0" r="1.5" stroke-width="0.8"/>
+    </g>
+    <!-- Floret: center cluster -->
+    <g transform="translate(-2,4)" stroke="#7C8B6A" stroke-width="0.7">
+      <path d="M0 0 C-1 -4 -1 -7 0 -8 C1 -7 1 -4 0 0"/>
+      <path d="M0 0 C4 -1 7 -1 8 0 C7 1 4 1 0 0"/>
+      <path d="M0 0 C1 4 1 7 0 8 C-1 7 -1 4 0 0"/>
+      <path d="M0 0 C-4 1 -7 1 -8 0 C-7 -1 -4 -1 0 0"/>
+      <circle cx="0" cy="0" r="1.5" stroke-width="0.8"/>
+    </g>
+    <g transform="translate(6,6)" stroke="#7C8B6A" stroke-width="0.7">
+      <path d="M0 0 C-1 -4 -1 -7 0 -8 C1 -7 1 -4 0 0"/>
+      <path d="M0 0 C4 -1 7 -1 8 0 C7 1 4 1 0 0"/>
+      <path d="M0 0 C1 4 1 7 0 8 C-1 7 -1 4 0 0"/>
+      <path d="M0 0 C-4 1 -7 1 -8 0 C-7 -1 -4 -1 0 0"/>
+      <circle cx="0" cy="0" r="1.5" stroke-width="0.8"/>
+    </g>
+    <!-- Floret: right cluster -->
+    <g transform="translate(18,10)" stroke="#7C8B6A" stroke-width="0.7">
+      <path d="M0 0 C-1 -4 -1 -7 0 -8 C1 -7 1 -4 0 0"/>
+      <path d="M0 0 C4 -1 7 -1 8 0 C7 1 4 1 0 0"/>
+      <path d="M0 0 C1 4 1 7 0 8 C-1 7 -1 4 0 0"/>
+      <path d="M0 0 C-4 1 -7 1 -8 0 C-7 -1 -4 -1 0 0"/>
+      <circle cx="0" cy="0" r="1.5" stroke-width="0.8"/>
+    </g>
+    <g transform="translate(26,10)" stroke="#7C8B6A" stroke-width="0.7">
+      <path d="M0 0 C-1 -4 -1 -7 0 -8 C1 -7 1 -4 0 0"/>
+      <path d="M0 0 C4 -1 7 -1 8 0 C7 1 4 1 0 0"/>
+      <path d="M0 0 C1 4 1 7 0 8 C-1 7 -1 4 0 0"/>
+      <path d="M0 0 C-4 1 -7 1 -8 0 C-7 -1 -4 -1 0 0"/>
+      <circle cx="0" cy="0" r="1.5" stroke-width="0.8"/>
+    </g>
+  </g>
+
+  <!-- Small powder dusting beside jar — evocative -->
+  <g fill="#7C8B6A" opacity="0.1">
+    <circle cx="294" cy="680" r="1.5"/>
+    <circle cx="502" cy="678" r="1.5"/>
+    <circle cx="508" cy="670" r="1"/>
+    <circle cx="288" cy="672" r="1"/>
+    <circle cx="296" cy="686" r="1"/>
+    <circle cx="505" cy="684" r="1"/>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <title>Brahmi Sprig</title>
+  <desc>A Brahmi (Bacopa monnieri) sprig with succulent oval leaves on a thin stem and a small 5-petaled flower at the tip, in sage botanical line-art.</desc>
+
+  <!-- Main stem — slightly curved, hand-drawn feel -->
+  <path d="M100 185 C100 185 99 160 100 140 C101 120 100 100 101 85 C102 72 101 62 100 52 C99 42 100 32 100 22"
+    stroke="#7C8B6A" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Leaf pair 1 — lowest, largest -->
+  <!-- Left leaf -->
+  <path d="M100 155 C92 150 80 148 74 152 C70 155 72 162 78 163 C86 165 96 160 100 155"
+    stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Left leaf midrib -->
+  <path d="M100 155 C90 157 80 158 74 158" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Right leaf -->
+  <path d="M100 155 C108 150 120 148 126 152 C130 155 128 162 122 163 C114 165 104 160 100 155"
+    stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right leaf midrib -->
+  <path d="M100 155 C110 157 120 158 126 158" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Leaf pair 2 — mid stem, slightly smaller -->
+  <!-- Left leaf -->
+  <path d="M100 128 C92 123 81 122 75 126 C71 130 74 137 80 138 C88 140 98 133 100 128"
+    stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Left leaf midrib -->
+  <path d="M100 128 C90 130 81 131 76 131" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Right leaf -->
+  <path d="M100 128 C108 123 119 122 125 126 C129 130 126 137 120 138 C112 140 102 133 100 128"
+    stroke="#7C8B6A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right leaf midrib -->
+  <path d="M100 128 C110 130 119 131 124 131" stroke="#7C8B6A" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Leaf pair 3 — upper, smaller still -->
+  <!-- Left leaf -->
+  <path d="M100 102 C94 97 84 96 80 100 C77 104 80 110 85 111 C92 113 99 107 100 102"
+    stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right leaf -->
+  <path d="M100 102 C106 97 116 96 120 100 C123 104 120 110 115 111 C108 113 101 107 100 102"
+    stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 4 — near tip, smallest -->
+  <!-- Left leaf -->
+  <path d="M100 76 C95 72 88 72 85 75 C83 78 85 83 89 84 C94 86 99 80 100 76"
+    stroke="#7C8B6A" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right leaf -->
+  <path d="M100 76 C105 72 112 72 115 75 C117 78 115 83 111 84 C106 86 101 80 100 76"
+    stroke="#7C8B6A" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 5-petaled flower at tip -->
+  <!-- Petal 1 — top -->
+  <path d="M100 22 C97 14 96 8 100 4 C104 8 103 14 100 22" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Petal 2 — upper right -->
+  <path d="M100 22 C107 18 112 14 116 16 C115 20 110 23 100 22" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Petal 3 — lower right -->
+  <path d="M100 22 C110 25 116 29 116 34 C112 35 107 30 100 22" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Petal 4 — lower left -->
+  <path d="M100 22 C90 25 84 29 84 34 C88 35 93 30 100 22" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Petal 5 — upper left -->
+  <path d="M100 22 C93 18 88 14 84 16 C85 20 90 23 100 22" stroke="#7C8B6A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Flower center dot -->
+  <circle cx="100" cy="22" r="2" stroke="#7C8B6A" stroke-width="1" opacity="0.8"/>
+
+  <!-- Stamens — tiny lines from center -->
+  <path d="M100 22 L100 18" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M100 22 L103 19" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M100 22 L97 19" stroke="#7C8B6A" stroke-width="0.5" stroke-linecap="round" opacity="0.6"/>
+</svg>
