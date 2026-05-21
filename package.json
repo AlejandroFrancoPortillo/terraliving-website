@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "pretest": "astro build --silent 2>/dev/null; cp node_modules/.astro/data-store.json .astro/data-store.json",
     "test": "vitest run"
   },
   "dependencies": {
