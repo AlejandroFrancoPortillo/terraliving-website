@@ -1,0 +1,38 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="bg-bone mt-32 pt-16 pb-8 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div>
+      <p class="font-display text-2xl text-ink">Terraliving</p>
+      <p class="mt-3 text-sm text-stone max-w-xs">Tools for a clear, grounded nervous system.</p>
+      <div class="mt-4 flex gap-4 text-sage text-sm">
+        <a href="https://instagram.com/terraliving.au" aria-label="Instagram">IG</a>
+        <a href="mailto:hello@terraliving.com.au" aria-label="Email">Email</a>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow mb-4">Site</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/shop" class="text-ink hover:text-sage">Shop</a></li>
+        <li><a href="/about" class="text-ink hover:text-sage">About</a></li>
+        <li><a href="/journal" class="text-ink hover:text-sage">Journal</a></li>
+        <li><a href="/shipping" class="text-ink hover:text-sage">Shipping & Returns</a></li>
+        <li><a href="/privacy" class="text-ink hover:text-sage">Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow mb-4">Earth Letter</p>
+      <p class="text-sm text-stone mb-4">One email a month. Field notes from the Sunshine Coast workshop.</p>
+      <form action="/api/newsletter" method="POST" class="flex gap-2">
+        <input type="email" name="email" required placeholder="your email" class="flex-1 bg-clay border border-stone/40 px-3 py-2 text-sm" />
+        <button type="submit" class="bg-sage text-clay px-4 text-sm font-medium uppercase tracking-wider">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-stone/20 flex flex-col md:flex-row justify-between gap-2 text-xs text-stone">
+    <p>© {year} Terraliving</p>
+    <p>Packaged in Queensland, Australia</p>
+    <p>Secured by Stripe</p>
+  </div>
+</footer>
