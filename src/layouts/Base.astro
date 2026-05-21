@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import CartDrawer from "../components/islands/CartDrawer";
 
 interface Props {
   title: string;
@@ -27,5 +28,6 @@ const { title, description = "Tools for a clear, grounded nervous system.", ogIm
       <slot />
     </main>
     <slot name="footer" />
+    <CartDrawer client:load />
   </body>
 </html>
