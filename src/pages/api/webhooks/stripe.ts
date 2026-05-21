@@ -37,7 +37,11 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response("ok", { status: 200 });
   }
 
-  const session = event.data.object as any;
+  const eventSession = event.data.object as any;
+  // line_items aren't included in the event payload — re-fetch with expand.
+  const session = await stripe.checkout.sessions.retrieve(eventSession.id, {
+    expand: ["line_items"],
+  }) as any;
   const orderNumber = String(session.id).slice(-8).toUpperCase();
   const rawLineItems = (session.line_items?.data ?? []) as StripeSessionLineItem[];
   const lineItems = rawLineItems.map(li => ({
