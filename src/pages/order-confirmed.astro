@@ -1,0 +1,87 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import { stripe } from "../lib/stripe";
+
+export const prerender = false;
+
+const sessionId = Astro.url.searchParams.get("session_id");
+
+type DisplayLine = {
+  description: string;
+  quantity: number;
+  amountTotal: number;
+};
+
+let order: {
+  number: string;
+  email: string;
+  total: string;
+  items: DisplayLine[];
+} | null = null;
+
+if (sessionId) {
+  try {
+    const session = await stripe.checkout.sessions.retrieve(sessionId, { expand: ["line_items"] });
+    const lineItems = (session.line_items?.data ?? []).map(li => ({
+      description: li.description ?? "",
+      quantity: li.quantity ?? 0,
+      amountTotal: li.amount_total ?? 0,
+    }));
+    order = {
+      number: session.id.slice(-8).toUpperCase(),
+      email: session.customer_details?.email ?? "",
+      total: ((session.amount_total ?? 0) / 100).toFixed(2),
+      items: lineItems,
+    };
+  } catch (e) {
+    console.error("Failed to load order:", e);
+  }
+}
+---
+<Base title="Thank you — your order is on its way">
+  <header slot="header" class="px-6 py-5 text-center border-b border-stone/20">
+    <a href="/" class="font-display text-2xl text-ink">Terraliving</a>
+  </header>
+
+  <section class="max-w-2xl mx-auto px-6 py-24 text-center">
+    <p class="eyebrow">Order confirmed</p>
+    <h1 class="font-display text-5xl text-ink mt-6 leading-tight">Thank you. The ritual is on its way.</h1>
+
+    {order ? (
+      <>
+        <p class="mt-8 text-base text-ink leading-relaxed">
+          We've sent a receipt to <strong>{order.email}</strong> and your order is now in the small-batch workshop. AU orders typically arrive in 2–5 business days. We'll email tracking the moment your parcel leaves Queensland.
+        </p>
+
+        <div class="mt-10 bg-bone px-6 py-4 inline-block">
+          <p class="eyebrow text-stone">Order #</p>
+          <p class="font-display text-2xl mt-2 text-ink">{order.number}</p>
+        </div>
+
+        <ul class="mt-12 text-left max-w-md mx-auto divide-y divide-stone/30">
+          {order.items.map(item => (
+            <li class="flex justify-between items-center py-3 text-sm">
+              <span class="text-ink">{item.description} × {item.quantity}</span>
+              <span class="text-stone">${(item.amountTotal / 100).toFixed(2)}</span>
+            </li>
+          ))}
+          <li class="flex justify-between items-center py-3 mt-2">
+            <span class="font-display text-lg text-ink">Total</span>
+            <span class="font-display text-lg text-ink">AUD ${order.total}</span>
+          </li>
+        </ul>
+
+        <p class="mt-12 font-display italic text-xl text-ink max-w-md mx-auto leading-relaxed">
+          "The earthsheet expects bare feet. The tea expects unhurried mornings. The chocolate expects you to wait the twenty minutes."
+        </p>
+      </>
+    ) : (
+      <p class="mt-8 text-base text-stone">Your order is being processed. Check your email for the receipt.</p>
+    )}
+
+    <a href="/" class="inline-block mt-12 bg-terracotta text-clay px-6 py-3 text-sm font-medium uppercase tracking-wider hover:opacity-90">Back to Terraliving →</a>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
