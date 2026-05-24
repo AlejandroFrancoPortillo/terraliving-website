@@ -4,15 +4,15 @@ name: Broccoli Sprout Powder
 workingName: true
 eyebrow: Daily Neuroprotection · Sulforaphane
 promise: Sprouted, dried, milled. One spoon a day for your long-arc nervous system.
-priceCents: 3200
+priceCents: 4200
 formats:
   - sku: sprouts-jar-60g
     label: Glass jar 60g (30 servings)
     priceCents: 4200
-  - sku: sprouts-sachets-15
-    label: Travel sachets 15 × 2g
-    priceCents: 3200
 heroImage: /images/products/broccoli-sprout-powder-hero.svg
+preorder: true
+preorderCtaLabel: Reserve your jar
+shippingNote: Founding 20 · ships 2–3 weeks after the first batch is funded · $9.95 flat AU-wide
 ---
 
 ## Why sprouts, not florets

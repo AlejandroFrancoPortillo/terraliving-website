@@ -19,6 +19,9 @@ const products = defineCollection({
     formats: z.array(productFormat).min(1),
     heroImage: z.string(),
     shippingNote: z.string().default("Ships from Queensland · $9.95 flat AU-wide · 2–5 business days"),
+    preorder: z.boolean().default(false),
+    comingSoon: z.boolean().default(false),
+    preorderCtaLabel: z.string().optional(),
   }),
 });
 

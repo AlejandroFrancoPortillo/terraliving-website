@@ -25,6 +25,7 @@ export const validateAndPriceCart = async (req: CartRequest): Promise<PricedCart
   const products = await getCollection("products");
   const skuIndex = new Map<string, { productName: string; formatLabel: string; priceCents: number }>();
   for (const p of products) {
+    if (p.data.comingSoon) continue;
     for (const f of p.data.formats) {
       skuIndex.set(f.sku, {
         productName: p.data.name,

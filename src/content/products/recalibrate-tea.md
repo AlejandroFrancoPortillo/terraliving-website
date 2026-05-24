@@ -4,15 +4,15 @@ name: Recalibrate Tea
 workingName: true
 eyebrow: Daytime Clarity · Cognitive Blend
 promise: Eight plants for cerebral blood flow, memory, and unhurried focus. Caffeine-free.
-priceCents: 2800
+priceCents: 3400
 formats:
   - sku: tea-jar-50g
     label: Loose-leaf jar 50g
     priceCents: 3400
-  - sku: tea-sachets-20
-    label: Pyramid sachets · 20-bag box
-    priceCents: 2800
 heroImage: /images/products/recalibrate-tea-hero.svg
+preorder: true
+preorderCtaLabel: Reserve your jar
+shippingNote: Founding 20 · ships 2–3 weeks after the first batch is funded · $9.95 flat AU-wide
 ---
 
 ## The blend

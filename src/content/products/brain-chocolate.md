@@ -10,6 +10,8 @@ formats:
     label: Single 85% bar, 8 squares
     priceCents: 2200
 heroImage: /images/products/brain-chocolate-hero.svg
+comingSoon: true
+shippingNote: Coming soon — bars are still being formulated in the Sunshine Coast kitchen.
 ---
 
 ## Per square

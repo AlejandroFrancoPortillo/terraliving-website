@@ -19,16 +19,21 @@ describe("server-side cart validation", () => {
       items: [
         { sku: "earthsheet-half", qty: 1 },
         { sku: "tea-jar-50g", qty: 2 },
-        { sku: "chocolate-bar-85", qty: 3 },
+        { sku: "sprouts-jar-60g", qty: 3 },
       ],
     };
     const result = await validateAndPriceCart(req);
     expect(result.lineItems).toHaveLength(3);
-    expect(result.subtotalCents).toBe(14900 + 3400 * 2 + 2200 * 3);
+    expect(result.subtotalCents).toBe(14900 + 3400 * 2 + 4200 * 3);
   });
 
   test("throws on unknown SKU", async () => {
     const req: CartRequest = { items: [{ sku: "fake-sku-xyz", qty: 1 }] };
+    await expect(validateAndPriceCart(req)).rejects.toThrow(/Unknown SKU/);
+  });
+
+  test("rejects SKUs from comingSoon products", async () => {
+    const req: CartRequest = { items: [{ sku: "chocolate-bar-85", qty: 1 }] };
     await expect(validateAndPriceCart(req)).rejects.toThrow(/Unknown SKU/);
   });
 

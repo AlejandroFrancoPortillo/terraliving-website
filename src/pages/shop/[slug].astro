@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import WaitlistForm from "../../components/islands/WaitlistForm";
 
 export async function getStaticPaths() {
   const products = await getCollection("products");
@@ -17,6 +18,7 @@ const { Content } = await render(product);
 const defaultFormat = product.data.formats[0];
 const defaultPriceAUD = (defaultFormat.priceCents / 100).toFixed(2);
 const hasMultipleFormats = product.data.formats.length > 1;
+const ctaLabel = product.data.preorderCtaLabel ?? (product.data.preorder ? "Reserve yours" : "Add to basket");
 ---
 <Base title={product.data.name}>
   <Header slot="header" />
@@ -51,16 +53,32 @@ const hasMultipleFormats = product.data.formats.length > 1;
         </div>
       )}
 
-      <p class="mt-6 font-medium text-2xl text-ink" id="current-price">AUD ${defaultPriceAUD}</p>
+      {!product.data.comingSoon && (
+        <p class="mt-6 font-medium text-2xl text-ink" id="current-price">AUD ${defaultPriceAUD}</p>
+      )}
 
-      <button
-        class="add-to-cart mt-6 w-full bg-terracotta text-clay py-4 text-sm font-medium uppercase tracking-wider hover:opacity-90"
-        data-slug={product.data.slug}
-        data-name={product.data.name}
-        data-image={product.data.heroImage}
-        data-default-sku={defaultFormat.sku}
-        data-default-price-cents={defaultFormat.priceCents}
-      >Add to basket</button>
+      {product.data.preorder && (
+        <p class="mt-4 text-xs uppercase tracking-wider text-terracotta">
+          Founding 20 · Pre-order
+        </p>
+      )}
+
+      {product.data.comingSoon ? (
+        <WaitlistForm
+          productSlug={product.data.slug}
+          productName={product.data.name}
+          client:load
+        />
+      ) : (
+        <button
+          class="add-to-cart mt-6 w-full bg-terracotta text-clay py-4 text-sm font-medium uppercase tracking-wider hover:opacity-90"
+          data-slug={product.data.slug}
+          data-name={product.data.name}
+          data-image={product.data.heroImage}
+          data-default-sku={defaultFormat.sku}
+          data-default-price-cents={defaultFormat.priceCents}
+        >{ctaLabel}</button>
+      )}
 
       <p class="mt-4 text-xs text-stone">{product.data.shippingNote}</p>
     </aside>

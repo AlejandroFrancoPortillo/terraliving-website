@@ -10,6 +10,9 @@ formats:
     label: Half-sheet 90 × 270 cm
     priceCents: 14900
 heroImage: /images/products/earthsheet-hero.svg
+preorder: true
+preorderCtaLabel: Reserve your sheet
+shippingNote: Founding 20 · ships 2–3 weeks after the first batch is funded · $14.95 flat AU-wide
 ---
 
 ## The product
