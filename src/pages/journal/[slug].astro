@@ -19,6 +19,21 @@ const { Content } = await render(entry);
 const formattedDate = entry.data.publishedAt
   ? new Date(entry.data.publishedAt).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" })
   : null;
+
+// Article ↔ product mapping (one of three discreet cross-bridges in the brand ecosystem).
+const productMap: Record<string, string> = {
+  "sulforaphane-methylation": "broccoli-sprout-powder",
+  "grounded-sleep-evidence": "earthsheet",
+  "theobromine-vs-caffeine": "brain-chocolate",
+};
+const relatedProductSlug = productMap[entry.data.slug];
+const allProducts = relatedProductSlug ? await getCollection("products") : [];
+const relatedProduct = relatedProductSlug
+  ? allProducts.find(p => p.data.slug === relatedProductSlug)
+  : null;
+const relatedPrice = relatedProduct
+  ? (relatedProduct.data.priceCents / 100).toFixed(2)
+  : null;
 ---
 <Base title={entry.data.title}>
   <Header slot="header" />
@@ -36,6 +51,20 @@ const formattedDate = entry.data.publishedAt
     <div class="mt-16 prose-terraliving-journal">
       <Content />
     </div>
+
+    {relatedProduct && (
+      <aside class="mt-20 bg-bone border border-stone/20 p-10">
+        <p class="eyebrow text-sage">The product this article is about</p>
+        <h2 class="font-display text-[2.25rem] text-ink mt-4 leading-tight">{relatedProduct.data.name}</h2>
+        <p class="mt-4 text-stone leading-relaxed max-w-prose" style="font-size: 1rem;">{relatedProduct.data.promise}</p>
+        <div class="mt-6 flex items-baseline gap-6 flex-wrap">
+          <a href={`/shop/${relatedProduct.data.slug}`} class="bg-terracotta text-clay px-5 py-3 text-xs font-medium uppercase tracking-wider hover:opacity-90">
+            View the product →
+          </a>
+          <span class="text-sm text-stone" style="font-family: var(--font-body);">AUD ${relatedPrice}</span>
+        </div>
+      </aside>
+    )}
 
     <div class="mt-24 pt-8 border-t border-stone/20">
       <a href="/journal" class="text-sm text-sage underline underline-offset-4 hover:text-terracotta">← Back to the journal</a>

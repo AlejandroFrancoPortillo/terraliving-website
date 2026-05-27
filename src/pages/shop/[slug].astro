@@ -19,6 +19,18 @@ const defaultFormat = product.data.formats[0];
 const defaultPriceAUD = (defaultFormat.priceCents / 100).toFixed(2);
 const hasMultipleFormats = product.data.formats.length > 1;
 const ctaLabel = product.data.preorderCtaLabel ?? (product.data.preorder ? "Reserve yours" : "Add to basket");
+
+// Product ↔ journal article mapping. Only shows when the article exists AND is published.
+const articleMap: Record<string, string> = {
+  "broccoli-sprout-powder": "sulforaphane-methylation",
+  "earthsheet": "grounded-sleep-evidence",
+  "brain-chocolate": "theobromine-vs-caffeine",
+};
+const relatedArticleSlug = articleMap[product.data.slug];
+const allArticles = relatedArticleSlug ? await getCollection("journal") : [];
+const relatedArticle = relatedArticleSlug
+  ? allArticles.find(a => a.data.slug === relatedArticleSlug && !a.data.draft)
+  : null;
 ---
 <Base title={product.data.name}>
   <Header slot="header" />
@@ -89,6 +101,24 @@ const ctaLabel = product.data.preorderCtaLabel ?? (product.data.preorder ? "Rese
       <Content />
     </article>
   </section>
+
+  {relatedArticle && (
+    <section class="max-w-3xl mx-auto px-6 pb-24">
+      <aside class="bg-bone border border-stone/20 p-10">
+        <p class="eyebrow text-sage">From the Journal</p>
+        <h2 class="font-display text-[2rem] text-ink mt-4 leading-tight">{relatedArticle.data.title}</h2>
+        <p class="mt-4 text-stone leading-relaxed max-w-prose" style="font-size: 1rem;">{relatedArticle.data.summary}</p>
+        <div class="mt-6 flex items-baseline gap-6 flex-wrap">
+          <a href={`/journal/${relatedArticle.data.slug}`} class="text-sm font-medium tracking-wider uppercase text-terracotta hover:text-ink underline underline-offset-4">
+            Read the full article →
+          </a>
+          {relatedArticle.data.readingMinutes && (
+            <span class="text-xs uppercase tracking-wider text-stone">{relatedArticle.data.readingMinutes} min read</span>
+          )}
+        </div>
+      </aside>
+    </section>
+  )}
 
   <Footer slot="footer" />
 
