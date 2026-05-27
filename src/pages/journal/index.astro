@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const all = await getCollection("journal");
+const published = all
+  .filter(e => !e.data.draft)
+  .sort((a, b) => (b.data.publishedAt ?? "").localeCompare(a.data.publishedAt ?? ""));
+const drafts = all.filter(e => e.data.draft);
+---
+<Base title="The Journal — Terraliving">
+  <Header slot="header" />
+
+  <!-- Hero band -->
+  <section class="max-w-3xl mx-auto px-6 py-24">
+    <p class="eyebrow">The Journal</p>
+    <h1 class="font-display text-5xl mt-4 text-ink leading-tight">Field notes from the workshop.</h1>
+    <p class="mt-6 text-lg text-stone leading-relaxed">
+      Long-form work that doesn't fit on a product page — mechanism, evidence, the things we know and the things we don't. One careful piece every few weeks, when there's something worth saying.
+    </p>
+    <p class="mt-4 text-lg text-stone leading-relaxed">
+      The Earth Letter (monthly email, link in the footer) is where new pieces are announced first.
+    </p>
+  </section>
+
+  {published.length > 0 && (
+    <section class="max-w-3xl mx-auto px-6 pb-16">
+      <p class="eyebrow">Published</p>
+      <h2 class="font-display text-3xl mt-4 text-ink">Latest.</h2>
+      <ul class="mt-10 space-y-10">
+        {published.map(piece => (
+          <li>
+            <a href={`/journal/${piece.data.slug}`} class="block group">
+              <p class="eyebrow text-sage">{piece.data.eyebrow}</p>
+              <h3 class="font-display text-2xl mt-2 text-ink leading-tight group-hover:text-terracotta transition-colors">{piece.data.title}</h3>
+              <p class="mt-3 text-sm text-stone leading-relaxed">{piece.data.summary}</p>
+              {piece.data.publishedAt && (
+                <p class="mt-3 text-xs uppercase tracking-wider text-stone">
+                  {new Date(piece.data.publishedAt).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" })}
+                  {piece.data.readingMinutes && <span> · {piece.data.readingMinutes} min read</span>}
+                </p>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {drafts.length > 0 && (
+    <section class="bg-bone py-16">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="eyebrow">In production</p>
+        <h2 class="font-display text-3xl mt-4 text-ink">Coming next.</h2>
+        <ul class="mt-10 space-y-10">
+          {drafts.map(piece => (
+            <li>
+              <p class="eyebrow text-sage">{piece.data.eyebrow}</p>
+              <h3 class="font-display text-2xl mt-2 text-ink leading-tight">{piece.data.title}</h3>
+              <p class="mt-3 text-sm text-stone leading-relaxed">{piece.data.summary}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- Honesty note -->
+  <section class="max-w-2xl mx-auto px-6 py-24">
+    <p class="font-display italic text-xl text-ink leading-relaxed text-center">
+      We write when we have something to say. No content calendar, no engagement pacing, no SEO machine. If a piece isn't ready, it doesn't ship.
+    </p>
+  </section>
+
+  <Footer slot="footer" />
+</Base>

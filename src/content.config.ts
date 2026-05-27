@@ -25,4 +25,18 @@ const products = defineCollection({
   }),
 });
 
-export const collections = { products };
+const journal = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/journal" }),
+  schema: z.object({
+    slug: z.string(),
+    title: z.string(),
+    eyebrow: z.string(),
+    summary: z.string(),
+    publishedAt: z.string().optional(),
+    draft: z.boolean().default(true),
+    heroImage: z.string().optional(),
+    readingMinutes: z.number().int().positive().optional(),
+  }),
+});
+
+export const collections = { products, journal };

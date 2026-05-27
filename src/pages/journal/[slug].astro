@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const all = await getCollection("journal");
+  const published = all.filter(entry => !entry.data.draft);
+  return published.map(entry => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const formattedDate = entry.data.publishedAt
+  ? new Date(entry.data.publishedAt).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" })
+  : null;
+---
+<Base title={entry.data.title}>
+  <Header slot="header" />
+
+  <article class="max-w-3xl mx-auto px-6 py-16">
+    <p class="eyebrow">{entry.data.eyebrow}</p>
+    <h1 class="font-display text-4xl md:text-5xl mt-4 text-ink leading-tight">{entry.data.title}</h1>
+    <p class="mt-6 text-lg text-stone leading-relaxed">{entry.data.summary}</p>
+    <p class="mt-6 text-xs uppercase tracking-wider text-stone">
+      {formattedDate && <span>{formattedDate}</span>}
+      {formattedDate && entry.data.readingMinutes && <span> · </span>}
+      {entry.data.readingMinutes && <span>{entry.data.readingMinutes} min read</span>}
+    </p>
+
+    <div class="mt-16 prose-terraliving-journal">
+      <Content />
+    </div>
+
+    <div class="mt-24 pt-8 border-t border-stone/20">
+      <a href="/journal" class="text-sm text-sage underline underline-offset-4 hover:text-terracotta">← Back to the journal</a>
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</Base>
+
+<style is:global>
+  .prose-terraliving-journal h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--color-ink); margin-top: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+  .prose-terraliving-journal h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--color-ink); margin-top: 2rem; margin-bottom: 0.75rem; }
+  .prose-terraliving-journal p { color: var(--color-ink); line-height: 1.75; margin-bottom: 1.25rem; max-width: 70ch; font-size: 1.0625rem; }
+  .prose-terraliving-journal strong { color: var(--color-ink); font-weight: 500; }
+  .prose-terraliving-journal em { font-style: italic; }
+  .prose-terraliving-journal ul, .prose-terraliving-journal ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+  .prose-terraliving-journal ul { list-style-type: disc; }
+  .prose-terraliving-journal ol { list-style-type: decimal; }
+  .prose-terraliving-journal li { color: var(--color-ink); line-height: 1.7; margin-bottom: 0.5rem; max-width: 70ch; }
+  .prose-terraliving-journal blockquote { border-left: 3px solid var(--color-sage); padding-left: 1.25rem; font-style: italic; color: var(--color-ink); margin: 1.5rem 0; }
+  .prose-terraliving-journal a { color: var(--color-sage); text-decoration: underline; text-underline-offset: 3px; }
+  .prose-terraliving-journal a:hover { color: var(--color-terracotta); }
+  .prose-terraliving-journal sup { font-size: 0.75rem; vertical-align: super; line-height: 0; }
+  .prose-terraliving-journal .footnotes { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid color-mix(in srgb, var(--color-stone) 20%, transparent); font-size: 0.875rem; }
+  .prose-terraliving-journal .footnotes h2 { font-size: 1.25rem; margin-top: 0; }
+  .prose-terraliving-journal .footnotes ol { padding-left: 1.25rem; }
+  .prose-terraliving-journal .footnotes li { font-size: 0.875rem; color: var(--color-stone); margin-bottom: 0.75rem; line-height: 1.6; }
+  .prose-terraliving-journal .footnotes li p { font-size: 0.875rem; line-height: 1.6; margin: 0; }
+</style>
