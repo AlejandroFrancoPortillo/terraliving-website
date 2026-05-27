@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /order-confirmed
+
+Host: https://terraliving.com.au
+Sitemap: https://terraliving.com.au/sitemap-index.xml
