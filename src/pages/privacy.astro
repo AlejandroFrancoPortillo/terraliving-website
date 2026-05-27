@@ -1,0 +1,76 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const lastUpdated = "27 May 2026";
+---
+<Base title="Privacy — Terraliving">
+  <Header slot="header" />
+
+  <!-- Hero band -->
+  <section class="max-w-3xl mx-auto px-6 py-16">
+    <p class="eyebrow">Privacy</p>
+    <h1 class="font-display text-5xl mt-4 text-ink leading-tight">What we collect, what we don't.</h1>
+    <p class="mt-6 text-lg text-stone leading-relaxed">
+      We try to collect the minimum we need to run a small business. No third-party advertising trackers, no behavioural cookies, no data sold or rented to anyone. Below is the full list.
+    </p>
+    <p class="mt-3 text-sm text-stone">Last updated: {lastUpdated}.</p>
+  </section>
+
+  <!-- Body -->
+  <section class="max-w-2xl mx-auto px-6 pb-24">
+
+    <h2 class="font-display text-2xl text-ink mt-12">Who runs this site</h2>
+    <p class="mt-3 text-ink leading-relaxed">Terraliving is a small Sunshine Coast business. The data controller for the purposes of the Australian Privacy Act 1988 is the Terraliving founder, contactable at <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="mailto:hello@terraliving.com.au">hello@terraliving.com.au</a>.</p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">What we collect</h2>
+    <ul class="mt-3 space-y-2 text-ink leading-relaxed list-disc pl-6">
+      <li><strong>Email address</strong> — only if you sign up to the Earth Letter or place an order.</li>
+      <li><strong>Order details</strong> — your name, shipping address, the items in your order, and an order reference. Held to fulfil your order and meet Australian record-keeping requirements.</li>
+      <li><strong>Payment information</strong> — collected and processed by Stripe directly. We do not see, store, or have access to your full card number. Stripe gives us back only the order amount, last four digits of the card, and a confirmation token.</li>
+      <li><strong>Communications you send us</strong> — emails to <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="mailto:hello@terraliving.com.au">hello@terraliving.com.au</a> are read by the founder and a small team. They are retained as long as is reasonable to provide ongoing customer service.</li>
+    </ul>
+    <p class="mt-3 text-ink leading-relaxed">We do not collect health data, demographic data, browsing history, or any data via third-party advertising scripts. We do not run Facebook Pixel, Google Ads remarketing, TikTok Pixel, or similar.</p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Cookies</h2>
+    <p class="mt-3 text-ink leading-relaxed">A small first-party cookie is used to keep the shopping cart working as you move between pages. We do not use third-party tracking cookies or behavioural advertising cookies. You can clear cookies in your browser at any time without affecting your ability to use the site, except the cart will reset.</p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Who sees your data</h2>
+    <p class="mt-3 text-ink leading-relaxed">The minimum number of third-party services needed to run the shop. None of them sell or share your data:</p>
+    <ul class="mt-3 space-y-2 text-ink leading-relaxed list-disc pl-6">
+      <li><strong>Stripe</strong> — payment processing. Operates under PCI-DSS Level 1. Subject to its own <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="https://stripe.com/au/privacy">privacy policy</a>.</li>
+      <li><strong>Resend</strong> — transactional email (order confirmation, shipping notification) and the Earth Letter newsletter. Holds your email address and the message content. Subject to its own <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="https://resend.com/legal/privacy-policy">privacy policy</a>.</li>
+      <li><strong>Neon</strong> — managed Postgres database where order records are stored.</li>
+      <li><strong>Vercel</strong> — site hosting and serverless function execution. Receives standard server logs (IP, user agent, request path) which are retained briefly for operational and security purposes.</li>
+      <li><strong>Australia Post / Sendle</strong> — shipping. Receives your name, shipping address, and parcel weight in order to deliver your order.</li>
+    </ul>
+
+    <h2 class="font-display text-2xl text-ink mt-12">How long we keep things</h2>
+    <ul class="mt-3 space-y-2 text-ink leading-relaxed list-disc pl-6">
+      <li><strong>Order records</strong> — 7 years, the minimum retention period required by the Australian Taxation Office for tax records.</li>
+      <li><strong>Newsletter email addresses</strong> — until you unsubscribe. Every Earth Letter contains a one-click unsubscribe link.</li>
+      <li><strong>Customer emails</strong> — typically 2 years, longer if there's an ongoing matter.</li>
+      <li><strong>Server logs</strong> — typically 30 days, longer if a security investigation requires it.</li>
+    </ul>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Your rights</h2>
+    <p class="mt-3 text-ink leading-relaxed">Under Australian privacy law, you can ask us to:</p>
+    <ul class="mt-3 space-y-2 text-ink leading-relaxed list-disc pl-6">
+      <li>Show you what personal information we hold about you.</li>
+      <li>Correct anything that's wrong.</li>
+      <li>Delete what you'd like deleted, subject to legal retention requirements (we have to keep order records 7 years; everything else we can delete).</li>
+      <li>Stop sending you the Earth Letter at any time.</li>
+    </ul>
+    <p class="mt-3 text-ink leading-relaxed">Email <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="mailto:hello@terraliving.com.au">hello@terraliving.com.au</a> for any of these. We aim to respond within 7 days.</p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Complaints</h2>
+    <p class="mt-3 text-ink leading-relaxed">If you're not happy with how we've handled your data, you can raise a complaint with the Office of the Australian Information Commissioner at <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="https://www.oaic.gov.au/">oaic.gov.au</a>. We'd rather you talk to us first — but the option is yours.</p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Changes to this policy</h2>
+    <p class="mt-3 text-ink leading-relaxed">When this policy changes materially, we'll note the new "Last updated" date at the top, and mention significant changes in the next Earth Letter.</p>
+
+  </section>
+
+  <Footer slot="footer" />
+</Base>

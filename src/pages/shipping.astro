@@ -1,0 +1,67 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Base title="Shipping & Returns — Terraliving">
+  <Header slot="header" />
+
+  <!-- Hero band -->
+  <section class="max-w-3xl mx-auto px-6 py-16">
+    <p class="eyebrow">Shipping & Returns</p>
+    <h1 class="font-display text-5xl mt-4 text-ink leading-tight">How orders move.</h1>
+    <p class="mt-6 text-lg text-stone leading-relaxed">
+      Plain text, no fine print. If anything below doesn't match what you experience, write to <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="mailto:hello@terraliving.com.au">hello@terraliving.com.au</a> and we'll make it right.
+    </p>
+  </section>
+
+  <!-- Body -->
+  <section class="max-w-2xl mx-auto px-6 pb-24">
+
+    <h2 class="font-display text-2xl text-ink mt-12">Where we ship</h2>
+    <p class="mt-3 text-ink leading-relaxed">Australia-wide only at this stage. International orders are not currently supported — we want to handle our own backyard well before stretching further.</p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Rates</h2>
+    <ul class="mt-3 space-y-2 text-ink leading-relaxed list-disc pl-6">
+      <li><strong>Recalibrate Tea, Broccoli Sprout Powder, Brain Chocolate</strong> — $9.95 flat, Australia-wide.</li>
+      <li><strong>Earthsheet</strong> — $14.95 flat, Australia-wide. The half-sheet is heavier and ships in its own carton.</li>
+      <li><strong>Multiple items in one order</strong> — the higher of the two rates applies; we don't stack shipping per item.</li>
+    </ul>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Lead time</h2>
+    <p class="mt-3 text-ink leading-relaxed">
+      <strong>Founding 20 / pre-order phase (current):</strong> orders ship 2–3 weeks after the batch is funded. You'll get an email at order time with the expected ship date, and another email when your parcel goes out with tracking.
+    </p>
+    <p class="mt-3 text-ink leading-relaxed">
+      <strong>Routine fulfilment (after the first batch):</strong> orders ship within 2–5 business days. Delivery typically 2–7 business days from dispatch depending on your state. Carriers used: Australia Post or Sendle.
+    </p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Returns — Earthsheet</h2>
+    <p class="mt-3 text-ink leading-relaxed">
+      The Earthsheet can be returned within 30 days of delivery for a full refund, provided the seal is unbroken and the original packaging is intact. Email us first; we'll cover return postage if the product is defective or arrived damaged. If you've slept on it and changed your mind, we ask that you cover the return postage.
+    </p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Returns — consumables</h2>
+    <p class="mt-3 text-ink leading-relaxed">
+      Recalibrate Tea, Broccoli Sprout Powder and Brain Chocolate cannot be returned once opened, for food-safety reasons. Unopened consumables can be returned within 14 days. If a consumable arrives damaged, sealed but compromised, or with the wrong product inside — email us with a photo and we'll replace it at no charge.
+    </p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Damage in transit</h2>
+    <p class="mt-3 text-ink leading-relaxed">
+      Open the parcel on the day it arrives if you can. Anything broken, leaking, crushed, or wrong — photograph it and email us within 7 days. We'll replace or refund at our cost. We carry the risk, not you.
+    </p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Cancelling an order</h2>
+    <p class="mt-3 text-ink leading-relaxed">
+      Email us before the parcel has been dispatched and we'll cancel and refund in full. After dispatch, treat it as a return (see above).
+    </p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Contact</h2>
+    <p class="mt-3 text-ink leading-relaxed">
+      <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="mailto:hello@terraliving.com.au">hello@terraliving.com.au</a>. We read every email. Usually a reply within 1–2 business days.
+    </p>
+
+  </section>
+
+  <Footer slot="footer" />
+</Base>
