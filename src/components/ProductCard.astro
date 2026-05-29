@@ -7,6 +7,7 @@ interface Props {
     promise: string;
     priceCents: number;
     heroImage: string;
+    comingSoon?: boolean;
   };
   imagePosition?: "left" | "right";
 }
@@ -22,7 +23,13 @@ const order = imagePosition === "left" ? "md:flex-row" : "md:flex-row-reverse";
     <p class="eyebrow">{product.eyebrow}</p>
     <h3 class="font-display text-4xl text-ink mt-3">{product.name}</h3>
     <p class="text-stone mt-3 text-base leading-relaxed">{product.promise}</p>
-    <p class="mt-6 font-medium text-ink">AUD ${priceAUD}</p>
-    <a href={`/shop/${product.slug}`} class="inline-block mt-4 text-sage hover:text-terracotta underline underline-offset-4">View →</a>
+    {product.comingSoon ? (
+      <p class="mt-6 text-sm font-medium uppercase tracking-wider text-sage">Coming soon</p>
+    ) : (
+      <>
+        <p class="mt-6 font-medium text-ink">AUD ${priceAUD}</p>
+        <a href={`/shop/${product.slug}`} class="inline-block mt-4 text-sage hover:text-terracotta underline underline-offset-4">View →</a>
+      </>
+    )}
   </div>
 </article>

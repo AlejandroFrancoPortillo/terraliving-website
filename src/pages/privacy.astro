@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const lastUpdated = "27 May 2026";
+const lastUpdated = "29 May 2026";
 ---
 <Base title="Privacy — Terraliving">
   <Header slot="header" />
@@ -31,10 +31,13 @@ const lastUpdated = "27 May 2026";
       <li><strong>Payment information</strong> — collected and processed by Stripe directly. We do not see, store, or have access to your full card number. Stripe gives us back only the order amount, last four digits of the card, and a confirmation token.</li>
       <li><strong>Communications you send us</strong> — emails to <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="mailto:hello@terraliving.com.au">hello@terraliving.com.au</a> are read by the founder and a small team. They are retained as long as is reasonable to provide ongoing customer service.</li>
     </ul>
-    <p class="mt-3 text-ink leading-relaxed">We do not collect health data, demographic data, browsing history, or any data via third-party advertising scripts. We do not run Facebook Pixel, Google Ads remarketing, TikTok Pixel, or similar.</p>
+    <p class="mt-3 text-ink leading-relaxed">We do not collect health data, demographic data, individual browsing history, or any data via third-party advertising scripts. We do not run Facebook Pixel, Google Ads remarketing, TikTok Pixel, or similar.</p>
 
     <h2 class="font-display text-2xl text-ink mt-12">Cookies</h2>
     <p class="mt-3 text-ink leading-relaxed">A small first-party cookie is used to keep the shopping cart working as you move between pages. We do not use third-party tracking cookies or behavioural advertising cookies. You can clear cookies in your browser at any time without affecting your ability to use the site, except the cart will reset.</p>
+
+    <h2 class="font-display text-2xl text-ink mt-12">Analytics</h2>
+    <p class="mt-3 text-ink leading-relaxed">We use Cloudflare Web Analytics to see basic, aggregate traffic — how many people visit and which pages they read. It is privacy-first by design: it sets no cookies, builds no profile of you, and cannot track you across other websites. It reads standard request data (such as your IP address and browser type) only to count visits, never to identify you. Because there are no cookies and no behavioural tracking, no consent banner is required.</p>
 
     <h2 class="font-display text-2xl text-ink mt-12">Who sees your data</h2>
     <p class="mt-3 text-ink leading-relaxed">The minimum number of third-party services needed to run the shop. None of them sell or share your data:</p>
@@ -43,6 +46,7 @@ const lastUpdated = "27 May 2026";
       <li><strong>Resend</strong> — transactional email (order confirmation, shipping notification) and the Earth Letter newsletter. Holds your email address and the message content. Subject to its own <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="https://resend.com/legal/privacy-policy">privacy policy</a>.</li>
       <li><strong>Neon</strong> — managed Postgres database where order records are stored.</li>
       <li><strong>Vercel</strong> — site hosting and serverless function execution. Receives standard server logs (IP, user agent, request path) which are retained briefly for operational and security purposes.</li>
+      <li><strong>Cloudflare</strong> — privacy-first, cookieless web analytics (visit and page-view counts). Receives standard request data (IP, user agent) to tally visits; sets no cookies and builds no cross-site profile. Subject to its own <a class="text-sage underline underline-offset-4 hover:text-terracotta" href="https://www.cloudflare.com/privacypolicy/">privacy policy</a>.</li>
       <li><strong>Australia Post / Sendle</strong> — shipping. Receives your name, shipping address, and parcel weight in order to deliver your order.</li>
     </ul>
 

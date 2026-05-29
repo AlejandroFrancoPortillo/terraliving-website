@@ -3,14 +3,42 @@
 ---
 <header class="px-6 py-5 flex items-center justify-between border-b border-stone/20">
   <a href="/" class="font-display text-2xl text-ink">Terraliving</a>
-  <nav class="flex items-center gap-8">
-    <a href="/shop" class="text-sm font-medium tracking-wider uppercase text-ink hover:text-sage">Shop</a>
-    <a href="/journal" class="text-sm font-medium tracking-wider uppercase text-ink hover:text-sage">Journal</a>
-    <a href="/about" class="text-sm font-medium tracking-wider uppercase text-ink hover:text-sage">About</a>
+
+  <div class="flex items-center gap-6">
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/shop" class="text-sm font-medium tracking-wider uppercase text-ink hover:text-sage">Shop</a>
+      <a href="/journal" class="text-sm font-medium tracking-wider uppercase text-ink hover:text-sage">Journal</a>
+      <a href="/about" class="text-sm font-medium tracking-wider uppercase text-ink hover:text-sage">About</a>
+    </nav>
+
     <button id="open-cart" class="text-sage hover:text-terracotta" aria-label="Open basket">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M6 7h12l-1.5 12h-9z" /><path d="M9 7V5a3 3 0 016 0v2" />
       </svg>
     </button>
-  </nav>
+
+    <!-- Mobile menu toggle -->
+    <button id="open-menu" class="md:hidden text-ink hover:text-sage" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+      </svg>
+    </button>
+  </div>
 </header>
+
+<!-- Mobile nav panel — hidden on desktop, toggled on mobile -->
+<nav id="mobile-nav" class="hidden md:hidden border-b border-stone/20 bg-clay">
+  <a href="/shop" class="block px-6 py-3 text-sm font-medium tracking-wider uppercase text-ink hover:text-sage border-b border-stone/10">Shop</a>
+  <a href="/journal" class="block px-6 py-3 text-sm font-medium tracking-wider uppercase text-ink hover:text-sage border-b border-stone/10">Journal</a>
+  <a href="/about" class="block px-6 py-3 text-sm font-medium tracking-wider uppercase text-ink hover:text-sage">About</a>
+</nav>
+
+<script>
+  const btn = document.getElementById("open-menu");
+  const panel = document.getElementById("mobile-nav");
+  btn?.addEventListener("click", () => {
+    const isOpen = panel?.classList.toggle("hidden") === false;
+    btn.setAttribute("aria-expanded", String(isOpen));
+  });
+</script>

@@ -29,5 +29,7 @@ const { title, description = "Tools for a clear, grounded nervous system.", ogIm
     </main>
     <slot name="footer" />
     <CartDrawer client:load />
+    {/* Cloudflare Web Analytics — plain defer script (NOT Partytown, which breaks SPA route counts). Paste the Terraliving beacon token below. */}
+    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "TERRALIVING_CF_BEACON_TOKEN"}'></script>
   </body>
 </html>

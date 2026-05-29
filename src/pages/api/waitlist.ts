@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import { getDb } from "../../lib/db";
+import { pingTelegram } from "../../lib/telegram";
 
 export const prerender = false;
 
@@ -29,11 +30,17 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     const sql = getDb();
-    await sql`
+    const rows = await sql`
       insert into waitlist (email, product_slug, source)
       values (${email}, ${productSlug}, ${source})
       on conflict (email, product_slug) do nothing
+      returning id
     `;
+    if (rows.length > 0) {
+      await pingTelegram(
+        `*New Terraliving waitlist signup*\nEmail: ${email}\nProduct: ${productSlug ?? "—"}\nSource: ${source}`,
+      );
+    }
     return json({ ok: true }, 200);
   } catch (e) {
     const message = e instanceof Error ? e.message : "Could not save signup";
